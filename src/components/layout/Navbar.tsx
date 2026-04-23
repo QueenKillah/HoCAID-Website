@@ -56,15 +56,17 @@ const Navbar: FC = () => {
           aria-label="HoCAID — go to homepage"
         >
           {!logoError ? (
-            <Image
-              src="/images/logo-white.png"
-              alt="HoCAID"
-              width={130}
-              height={44}
-              className="h-10 w-auto object-contain md:h-11"
-              priority
-              onError={() => setLogoError(true)}
-            />
+            <div className="rounded-lg bg-white px-2 py-1">
+              <Image
+                src="/images/logo.png"
+                alt="HoCAID"
+                width={120}
+                height={40}
+                className="h-9 w-auto object-contain md:h-10"
+                priority
+                onError={() => setLogoError(true)}
+              />
+            </div>
           ) : (
             <span className="font-display text-xl font-bold tracking-tight">
               Ho<span className="text-gold">CAID</span>

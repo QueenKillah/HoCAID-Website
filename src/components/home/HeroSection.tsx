@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "@/components/shared/Button";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 const pillarChips = [
   "Health & Wellbeing",
@@ -19,27 +20,21 @@ const fadeUp = (delay: number) => ({
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[88vh] flex-col items-center justify-center overflow-hidden bg-navy px-4 py-24 text-center text-white md:px-8">
-      {/* ── Decorative radial blobs ── */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 -top-20 h-[640px] w-[640px] rounded-full bg-orange/10 blur-3xl" />
-        <div className="absolute -right-40 bottom-0 h-[540px] w-[540px] rounded-full bg-sky/10 blur-3xl" />
-        <div className="absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/5 blur-3xl" />
-      </div>
-
-      {/* ── Subtle grid overlay ── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
+    <BackgroundGradientAnimation
+      gradientBackgroundStart="rgb(12, 35, 64)"
+      gradientBackgroundEnd="rgb(5, 16, 35)"
+      firstColor="14, 165, 233"
+      secondColor="249, 115, 22"
+      thirdColor="251, 191, 36"
+      fourthColor="22, 101, 52"
+      fifthColor="14, 165, 233"
+      pointerColor="249, 115, 22"
+      blendingValue="hard-light"
+      containerClassName="min-h-[88vh] !h-auto"
+      className="relative z-10 flex min-h-[88vh] flex-col items-center justify-center px-4 py-24 text-center text-white md:px-8"
+    >
       {/* ── Content ── */}
-      <div className="relative z-10 flex max-w-4xl flex-col items-center">
+      <div className="flex max-w-4xl flex-col items-center">
         {/* Eyebrow */}
         <motion.div {...fadeUp(0)} className="mb-5 flex items-center gap-2.5">
           <span aria-hidden="true" className="h-px w-8 rounded-full bg-gold/60" />
@@ -115,7 +110,7 @@ const HeroSection = () => {
           <div className="h-1.5 w-0.5 rounded-full bg-white/50" />
         </motion.div>
       </motion.div>
-    </section>
+    </BackgroundGradientAnimation>
   );
 };
 
