@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Button from "@/components/shared/Button";
 
 const RAY_COUNT = 12;
 const SUN_RISE_DURATION = 2.4;
@@ -15,75 +15,51 @@ const pillarChips = [
   "Gender & Youth",
 ];
 
+const rays = Array.from({ length: RAY_COUNT }, (_, i) => i);
+
 const HeroSection = () => {
   return (
-    <section
-      className="relative min-h-screen overflow-hidden flex items-center justify-center"
-      style={{
-        background:
-          "linear-gradient(to bottom, #0C2340 0%, #0C2340 22%, #1a3a6b 40%, #7c2d12 57%, #F97316 71%, #FBBF24 81%, #F97316 91%, #c2440f 100%)",
-      }}
-    >
-      {/* ── Sun assembly — positioned at horizon, rises upward ── */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "35%",
-          left: "50%",
-          marginLeft: "-40px",
-          zIndex: 2,
-        }}
-      >
+    <section className="relative min-h-screen overflow-hidden flex items-center justify-center bg-gradient-hero-sky">
+
+      {/* Sun assembly — anchored at horizon, rises upward */}
+      <div className="absolute z-[2]" style={{ bottom: "35%", left: "50%", marginLeft: "-40px" }}>
         <motion.div
           initial={{ y: 260 }}
           animate={{ y: -240 }}
           transition={{ duration: SUN_RISE_DURATION, ease: [0.16, 1, 0.3, 1] }}
-          style={{ position: "relative" }}
+          className="relative"
         >
-          {/* Bloom glow — expands as sun rises */}
+          {/* Bloom glow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.3 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: SUN_RISE_DURATION - 0.3, ease: "easeOut" }}
+            className="absolute rounded-full pointer-events-none"
             style={{
-              position: "absolute",
               width: 480,
               height: 480,
               left: -200,
               top: -200,
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(251,191,36,0.55) 0%, rgba(249,115,22,0.32) 35%, rgba(249,115,22,0.1) 60%, transparent 75%)",
-              pointerEvents: "none",
+              background: "radial-gradient(circle, rgba(251,191,36,0.55) 0%, rgba(249,115,22,0.32) 35%, rgba(249,115,22,0.1) 60%, transparent 75%)",
             }}
           />
 
-          {/* Light rays fanning outward from sun center */}
-          {Array.from({ length: RAY_COUNT }, (_, i) => (
+          {/* Light rays */}
+          {rays.map((i) => (
             <div
               key={i}
-              style={{
-                position: "absolute",
-                left: 40,
-                top: 39,
-                transformOrigin: "0 50%",
-                transform: `rotate(${i * (360 / RAY_COUNT)}deg)`,
-              }}
+              className="absolute origin-[0_50%]"
+              style={{ left: 40, top: 39, transform: `rotate(${i * (360 / RAY_COUNT)}deg)` }}
             >
               <motion.div
                 initial={{ scaleX: 0, opacity: 0 }}
                 animate={{ scaleX: 1, opacity: 0.55 }}
-                transition={{
-                  delay: 1.65 + i * 0.06,
-                  duration: 0.9,
-                  ease: "easeOut",
-                }}
+                transition={{ delay: 1.65 + i * 0.06, duration: 0.9, ease: "easeOut" }}
+                className="origin-[0_50%]"
                 style={{
                   width: 160,
                   height: 2,
-                  background:
-                    "linear-gradient(to right, rgba(251,191,36,0.9), transparent)",
-                  transformOrigin: "0 50%",
+                  background: "linear-gradient(to right, rgba(251,191,36,0.9), transparent)",
                 }}
               />
             </div>
@@ -91,58 +67,35 @@ const HeroSection = () => {
 
           {/* Sun disk */}
           <div
+            className="relative z-[1] w-20 h-20 rounded-full"
             style={{
-              position: "relative",
-              zIndex: 1,
-              width: 80,
-              height: 80,
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, #fffde7 0%, #FBBF24 48%, #F97316 100%)",
-              boxShadow:
-                "0 0 30px 12px rgba(251,191,36,0.8), 0 0 70px 35px rgba(249,115,22,0.45), 0 0 130px 60px rgba(249,115,22,0.15)",
+              background: "radial-gradient(circle, #fffde7 0%, #FBBF24 48%, #F97316 100%)",
+              boxShadow: "0 0 30px 12px rgba(251,191,36,0.8), 0 0 70px 35px rgba(249,115,22,0.45), 0 0 130px 60px rgba(249,115,22,0.15)",
             }}
           />
         </motion.div>
       </div>
 
-      {/* ── Horizon line ── */}
+      {/* Horizon line */}
       <div
+        className="absolute inset-x-0 z-[6]"
         style={{
-          position: "absolute",
           bottom: "35%",
-          left: 0,
-          right: 0,
           height: 1,
-          background:
-            "linear-gradient(to right, transparent 0%, rgba(251,191,36,0.5) 20%, rgba(249,115,22,0.85) 50%, rgba(251,191,36,0.5) 80%, transparent 100%)",
-          zIndex: 6,
+          background: "linear-gradient(to right, transparent 0%, rgba(251,191,36,0.5) 20%, rgba(249,115,22,0.85) 50%, rgba(251,191,36,0.5) 80%, transparent 100%)",
         }}
       />
 
-      {/* ── Earth / ground overlay — masks sun below horizon ── */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "35%",
-          background:
-            "linear-gradient(to top, #05101e 0%, #091828 55%, transparent 100%)",
-          zIndex: 5,
-        }}
-      />
+      {/* Earth overlay — masks sun below horizon */}
+      <div className="absolute inset-x-0 bottom-0 z-[5] bg-gradient-earth" style={{ height: "35%" }} />
 
-      {/* ── Content — fades in after sun animation completes ── */}
+      {/* Content — fades in after sun animation completes */}
       <motion.div
         initial={{ opacity: 0, y: 22 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: CONTENT_DELAY, ease: "easeOut" }}
-        className="relative flex flex-col items-center text-center px-4 max-w-4xl mx-auto"
-        style={{ zIndex: 10 }}
+        className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto"
       >
-        {/* Eyebrow */}
         <div className="mb-5 flex items-center gap-2.5">
           <span aria-hidden="true" className="h-px w-8 rounded-full bg-gold/60" />
           <p className="text-xs font-bold uppercase tracking-widest text-gold">
@@ -151,46 +104,28 @@ const HeroSection = () => {
           <span aria-hidden="true" className="h-px w-8 rounded-full bg-gold/60" />
         </div>
 
-        {/* Tagline — fades in only after sun animation finishes */}
         <h1 className="font-display text-4xl font-black leading-tight text-balance text-white md:text-5xl lg:text-6xl">
           Rising Together Towards{" "}
-          <span
-            style={{
-              background: "linear-gradient(to right, #F97316, #FBBF24)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <span className="bg-gradient-to-r from-orange to-gold bg-clip-text text-transparent">
             a Better Tomorrow
           </span>
         </h1>
 
-        {/* Sub-heading */}
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
           Empowering communities across Africa through five strategic pillars —
           Health, Agriculture, Digital Access, Environment, and Gender &amp;
           Youth Empowerment.
         </p>
 
-        {/* CTA buttons */}
         <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center">
-          <Link
-            href="/our-work"
-            className="flex min-h-[52px] items-center justify-center rounded-xl px-8 text-base font-bold text-white shadow-lg transition-opacity hover:opacity-90"
-            style={{ background: "linear-gradient(to right, #F97316, #FBBF24)" }}
-          >
+          <Button href="/our-work" variant="primary" size="lg">
             Our Work
-          </Link>
-          <Link
-            href="/get-involved"
-            className="flex min-h-[52px] items-center justify-center rounded-xl border-2 border-white/40 px-8 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-          >
+          </Button>
+          <Button href="/get-involved" variant="outline-white" size="lg">
             Get Involved
-          </Link>
+          </Button>
         </div>
 
-        {/* Pillar chips */}
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {pillarChips.map((chip) => (
             <span
@@ -203,14 +138,13 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* ── Scroll cue ── */}
+      {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: CONTENT_DELAY + 0.9, duration: 0.8 }}
         aria-hidden="true"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        style={{ zIndex: 10 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}

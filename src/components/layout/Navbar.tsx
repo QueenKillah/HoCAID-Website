@@ -3,17 +3,18 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/shared/Logo";
 
 const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const pathname = usePathname();
+  const handleLogoError = () => setLogoError(true);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -56,25 +57,7 @@ const Navbar: FC = () => {
           aria-label="HoCAID — go to homepage"
         >
           {!logoError ? (
-            <div
-              className="overflow-hidden"
-              style={{ width: 108, height: 36 }}
-            >
-              <Image
-                src="/images/logo.png"
-                alt="HoCAID"
-                width={120}
-                height={40}
-                className="h-full w-auto"
-                style={{
-                  filter: "brightness(0) invert(1)",
-                  transform: "scale(1.15)",
-                  transformOrigin: "center",
-                }}
-                priority
-                onError={() => setLogoError(true)}
-              />
-            </div>
+            <Logo priority onError={handleLogoError} />
           ) : (
             <span className="font-display text-xl font-bold tracking-tight">
               Ho<span className="text-gold">CAID</span>

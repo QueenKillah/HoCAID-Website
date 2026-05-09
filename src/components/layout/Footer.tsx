@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { PILLARS, SOCIAL_LINKS, SITE_TAGLINE, SITE_NAME } from "@/lib/constants";
+import Logo from "@/components/shared/Logo";
 
 /* ─── Inline brand SVG icons ─────────────────────────────────────────────── */
 const TwitterX = () => (
@@ -95,23 +95,7 @@ const Footer: FC = () => {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label={`${SITE_NAME} — home`} className="mb-4 inline-block">
-              <div
-                className="overflow-hidden"
-                style={{ width: 108, height: 36 }}
-              >
-                <Image
-                  src="/images/logo.png"
-                  alt={SITE_NAME}
-                  width={120}
-                  height={40}
-                  className="h-full w-auto"
-                  style={{
-                    filter: "brightness(0) invert(1)",
-                    transform: "scale(1.15)",
-                    transformOrigin: "center",
-                  }}
-                />
-              </div>
+              <Logo />
             </Link>
             <p className="max-w-[260px] text-sm leading-relaxed text-white/70">
               {SITE_TAGLINE}

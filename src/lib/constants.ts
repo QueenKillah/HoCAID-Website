@@ -12,7 +12,13 @@ import type {
 export const SITE_NAME = "HoCAID";
 export const SITE_TAGLINE = "Rising Together Towards a Better Tomorrow";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hocaid.org";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hocaid.ng";
+
+export const SITE_MISSION =
+  "To strengthen resilient communities by advancing equitable healthcare systems, climate-responsive solutions, and inclusive governance through community-led, evidence-based interventions and strategic partnerships.";
+
+export const SITE_VISION =
+  "A world where every individual lives in a healthy, sustainable environment, supported by inclusive governance, accessible education, and opportunities for economic well-being, leading to a just and prosperous future for all.";
 
 /* ─── Navigation ─────────────────────────────────────────────────────────── */
 export const NAV_LINKS: NavLink[] = [
@@ -227,40 +233,40 @@ export const IMPACT_STATS: ImpactStat[] = [
 /* ─── Core Values (About page) ───────────────────────────────────────────── */
 export const CORE_VALUES: CoreValue[] = [
   {
-    title: "Community First",
+    title: "Integrity",
     description:
-      "Every decision starts and ends with the communities we serve. Their voices shape our programmes.",
-    icon: "Heart",
-  },
-  {
-    title: "Integrity & Transparency",
-    description:
-      "We operate with openness, accountability, and honesty in all relationships and reporting.",
+      "We act with honesty, transparency, and accountability in every relationship, decision, and report.",
     icon: "Shield",
   },
   {
-    title: "Inclusive Development",
+    title: "Equity",
     description:
-      "We leave no one behind. Our programmes prioritise the most marginalised and underserved.",
+      "We prioritise the most marginalised — ensuring that resources, opportunities, and voice reach those who need them most.",
     icon: "Users",
   },
   {
-    title: "Evidence-Based Action",
+    title: "Empowerment",
     description:
-      "We design, implement, and evaluate with data. Learning drives continuous improvement.",
+      "We believe communities hold the solutions. Our role is to provide tools and space for people to lead their own development.",
+    icon: "Heart",
+  },
+  {
+    title: "Innovation",
+    description:
+      "We embrace evidence-based, creative approaches to complex development challenges — learning, adapting, and improving continuously.",
     icon: "BarChart2",
   },
   {
-    title: "Sustainable Impact",
+    title: "Collaboration",
     description:
-      "We build capacity, not dependency — creating systems that outlast our direct involvement.",
-    icon: "Leaf",
+      "We work with governments, NGOs, local leaders, and communities — not around them — to build coalitions that multiply impact.",
+    icon: "Handshake",
   },
   {
-    title: "Partnership",
+    title: "Sustainability",
     description:
-      "We work with governments, NGOs, and communities — not around them — to multiply impact.",
-    icon: "Handshake",
+      "We build capacity, not dependency — creating systems, skills, and structures that thrive long after our direct involvement ends.",
+    icon: "Leaf",
   },
 ];
 
@@ -307,24 +313,24 @@ export const TIMELINE: TimelineEvent[] = [
 /* ─── Team (About page) ──────────────────────────────────────────────────── */
 export const TEAM: TeamMember[] = [
   {
-    name: "Dr. Amira Okafor",
+    name: "Dr. Jabeer Kwaru",
     title: "Executive Director",
-    bio: "A public health specialist with 20 years of experience across West and East Africa, Amira founded HoCAID to bridge the gap between development policy and grassroots impact.",
+    bio: "A public health and development specialist, Dr. Kwaru leads HoCAID's overall strategy and external partnerships, driving community-centred, evidence-based development across all five pillars.",
   },
   {
-    name: "James Mensah",
-    title: "Director of Programmes",
-    bio: "James oversees all five pillar programmes, bringing deep expertise in agricultural development and community mobilisation from 15 years in the field.",
+    name: "Fatima Maha",
+    title: "Director, Partnerships & Resource Mobilisation",
+    bio: "Fatima builds and manages HoCAID's strategic alliances with donors, government bodies, and implementing partners, ensuring sustainable funding and programme reach.",
   },
   {
-    name: "Fatima Al-Rashid",
-    title: "Head of Health & Wellbeing",
-    bio: "A maternal health nurse and programme manager, Fatima leads HoCAID's health outreach across rural communities, championing preventive care and mental health.",
+    name: "Peter Oduntan",
+    title: "Director, MEAL",
+    bio: "Peter leads HoCAID's Monitoring, Evaluation, Accountability & Learning function, embedding rigorous evidence and adaptive management across every programme we run.",
   },
   {
-    name: "Chidi Nwosu",
-    title: "Director of Digital Initiatives",
-    bio: "A software engineer turned development practitioner, Chidi drives HoCAID's digital inclusion agenda — from community tech hubs to e-health data systems.",
+    name: "Udeme Emah",
+    title: "Director, Digital Innovation & Communications",
+    bio: "Udeme shapes HoCAID's digital strategy and brand voice — from community technology hubs and e-health systems to public communications and stakeholder engagement.",
   },
 ];
 

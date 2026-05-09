@@ -22,7 +22,9 @@ const config: Config = {
         sans:    ['"DM Sans"', "Arial", "sans-serif"],
       },
       backgroundImage: {
-        "gradient-cta": "linear-gradient(135deg, #F97316, #FBBF24)",
+        "gradient-cta":      "linear-gradient(135deg, #F97316, #FBBF24)",
+        "gradient-hero-sky": "linear-gradient(to bottom, #0C2340 0%, #0C2340 22%, #1a3a6b 40%, #7c2d12 57%, #F97316 71%, #FBBF24 81%, #F97316 91%, #c2440f 100%)",
+        "gradient-earth":    "linear-gradient(to top, #05101e 0%, #091828 55%, transparent 100%)",
       },
       animation: {
         first: "moveVertical 30s ease infinite",

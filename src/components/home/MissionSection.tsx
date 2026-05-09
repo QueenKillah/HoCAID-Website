@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Button from "@/components/shared/Button";
+import { SITE_MISSION, SITE_VISION } from "@/lib/constants";
 
 const MissionSection: FC = () => {
   return (
@@ -44,8 +45,7 @@ const MissionSection: FC = () => {
                 Our Mission
               </p>
               <p className="font-display text-xl font-bold leading-snug md:text-2xl">
-                To empower marginalised communities with the resources,
-                knowledge, and systems they need to thrive sustainably.
+                {SITE_MISSION}
               </p>
             </div>
 
@@ -54,8 +54,7 @@ const MissionSection: FC = () => {
                 Our Vision
               </p>
               <p className="font-display text-xl font-bold leading-snug text-navy md:text-2xl">
-                A world where every community — regardless of geography or
-                circumstance — has the opportunity to determine its own future.
+                {SITE_VISION}
               </p>
             </div>
 

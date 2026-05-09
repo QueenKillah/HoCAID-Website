@@ -20,8 +20,8 @@ const contactDetails = [
   {
     Icon: Mail,
     label: "Email",
-    value: "info@hocaid.org",
-    href: "mailto:info@hocaid.org",
+    value: "info@hocaid.ng",
+    href: "mailto:info@hocaid.ng",
   },
   {
     Icon: Phone,
@@ -44,11 +44,11 @@ const contactDetails = [
 ];
 
 const enquiryTypes = [
-  { label: "General Enquiry", email: "info@hocaid.org" },
-  { label: "Partnerships", email: "partnerships@hocaid.org" },
-  { label: "Media & Press", email: "media@hocaid.org" },
-  { label: "Consulting", email: "consulting@hocaid.org" },
-  { label: "Donations", email: "donate@hocaid.org" },
+  { label: "General Enquiry", email: "info@hocaid.ng" },
+  { label: "Partnerships", email: "partnerships@hocaid.ng" },
+  { label: "Media & Press", email: "media@hocaid.ng" },
+  { label: "Consulting", email: "consulting@hocaid.ng" },
+  { label: "Donations", email: "donate@hocaid.ng" },
 ];
 
 export default function ContactPage() {

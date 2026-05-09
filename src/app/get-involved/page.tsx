@@ -142,11 +142,11 @@ export default function GetInvolvedPage() {
                   ))}
                 </ul>
                 <a
-                  href="mailto:partnerships@hocaid.org"
+                  href="mailto:partnerships@hocaid.ng"
                   className="flex items-center gap-2 text-sm font-semibold text-orange hover:underline"
                 >
                   <Mail size={14} aria-hidden="true" />
-                  partnerships@hocaid.org
+                  partnerships@hocaid.ng
                 </a>
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function GetInvolvedPage() {
               </Button>
               <p className="mt-3 text-center text-xs text-grey">
                 Secure payment integration coming soon. To donate now, please{" "}
-                <a href="mailto:donate@hocaid.org" className="font-semibold text-orange hover:underline">
+                <a href="mailto:donate@hocaid.ng" className="font-semibold text-orange hover:underline">
                   contact us directly
                 </a>
                 .

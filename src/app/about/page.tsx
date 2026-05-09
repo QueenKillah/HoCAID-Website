@@ -12,7 +12,7 @@ import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnersStrip from "@/components/home/PartnersStrip";
 import FadeUp from "@/components/motion/FadeUp";
-import { CORE_VALUES, TIMELINE, TEAM } from "@/lib/constants";
+import { CORE_VALUES, TIMELINE, TEAM, SITE_MISSION, SITE_VISION } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About HoCAID",
@@ -85,8 +85,7 @@ export default function AboutPage() {
                   Our Mission
                 </p>
                 <p className="font-display text-xl font-bold leading-snug md:text-2xl">
-                  To empower marginalised communities with the resources,
-                  knowledge, and systems they need to thrive sustainably.
+                  {SITE_MISSION}
                 </p>
               </div>
               <div className="rounded-2xl bg-orange/5 p-7 ring-1 ring-orange/20">
@@ -94,9 +93,7 @@ export default function AboutPage() {
                   Our Vision
                 </p>
                 <p className="font-display text-xl font-bold leading-snug text-navy md:text-2xl">
-                  A world where every community — regardless of geography or
-                  circumstance — has the opportunity to determine its own
-                  future.
+                  {SITE_VISION}
                 </p>
               </div>
             </div>
