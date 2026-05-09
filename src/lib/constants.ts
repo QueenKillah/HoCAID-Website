@@ -72,6 +72,7 @@ export const PILLARS: Pillar[] = [
       "Preventive Care",
       "Community Health Workers",
     ],
+    imageUrl: "/images/hanna-morris-6BhCI5uWiFQ-unsplash.jpg",
   },
   {
     id: "agriculture",
@@ -106,6 +107,7 @@ export const PILLARS: Pillar[] = [
       "Women in Agriculture",
       "Market Access",
     ],
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     id: "digital-access",
@@ -140,6 +142,7 @@ export const PILLARS: Pillar[] = [
       "e-Health",
       "e-Governance",
     ],
+    imageUrl: "/images/martin-sanchez-j2c7yf223Mk-unsplash.jpg",
   },
   {
     id: "environment",
@@ -174,6 +177,7 @@ export const PILLARS: Pillar[] = [
       "Waste Management",
       "Conservation Education",
     ],
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     id: "gender-youth",
@@ -208,6 +212,7 @@ export const PILLARS: Pillar[] = [
       "Economic Empowerment",
       "GBV Prevention",
     ],
+    imageUrl: "/images/hanna-morris-3EkT6xb4K9w-unsplash.jpg",
   },
 ];
 
@@ -333,6 +338,7 @@ export const SAMPLE_NEWS: NewsArticle[] = [
     category: "Health",
     excerpt:
       "Our expanded mobile clinic network now reaches 12 rural communities, providing free primary care, maternal health support, and mental wellness services to over 5,000 residents.",
+    imageUrl: "/images/hanna-morris-6BhCI5uWiFQ-unsplash.jpg",
   },
   {
     slug: "climate-smart-agriculture-yields-2024",
@@ -342,6 +348,7 @@ export const SAMPLE_NEWS: NewsArticle[] = [
     category: "Agriculture",
     excerpt:
       "Our latest agricultural cycle proves that climate-adaptive techniques — combined with cooperative market linkages — can transform food security for smallholder farming families.",
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     slug: "digital-literacy-youth-hubs-2024",
@@ -351,6 +358,7 @@ export const SAMPLE_NEWS: NewsArticle[] = [
     category: "Digital Access",
     excerpt:
       "From digital literacy for adults to coding bootcamps for youth, our community technology hubs are closing the digital divide one neighbourhood at a time.",
+    imageUrl: "/images/martin-sanchez-j2c7yf223Mk-unsplash.jpg",
   },
 ];
 
@@ -383,6 +391,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "35% reduction in preventable illness in target communities",
       "Maternal mortality rate reduced by 20% in service areas",
     ],
+    imageUrl: "/images/hanna-morris-6BhCI5uWiFQ-unsplash.jpg",
   },
   {
     slug: "maternal-health-training-ghana",
@@ -399,6 +408,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "90% of graduates retained in their communities",
       "Antenatal coverage increased from 45% to 78%",
     ],
+    imageUrl: "/images/hanna-morris-3EkT6xb4K9w-unsplash.jpg",
   },
   {
     slug: "climate-smart-farming-plateau",
@@ -415,6 +425,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "8 farmer cooperatives formed and registered",
       "6 direct market linkages established",
     ],
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     slug: "womens-agricultural-cooperative",
@@ -431,6 +442,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "Average household income increased by 35%",
       "80% of groups remain self-sustaining after programme exit",
     ],
+    imageUrl: "/images/hanna-morris-3EkT6xb4K9w-unsplash.jpg",
   },
   {
     slug: "community-technology-hubs",
@@ -447,6 +459,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "60% female participation rate",
       "15 communities connected for the first time",
     ],
+    imageUrl: "/images/martin-sanchez-j2c7yf223Mk-unsplash.jpg",
   },
   {
     slug: "youth-coding-bootcamp",
@@ -462,6 +475,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "70% completion rate",
       "45 graduates placed in tech internships",
     ],
+    imageUrl: "/images/martin-sanchez-j2c7yf223Mk-unsplash.jpg",
   },
   {
     slug: "reforestation-cross-river",
@@ -477,6 +491,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "22 community groups actively stewarding trees",
       "800 green jobs created in nursery management",
     ],
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     slug: "solar-energy-rural-communities",
@@ -494,6 +509,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "60% reduction in household energy costs",
       "3 health clinics and 8 schools powered",
     ],
+    imageUrl: "/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg",
   },
   {
     slug: "girls-education-scholarship",
@@ -509,6 +525,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "95% retention rate among scholarship recipients",
       "150 community leaders engaged in advocacy",
     ],
+    imageUrl: "/images/hanna-morris-3EkT6xb4K9w-unsplash.jpg",
   },
   {
     slug: "womens-leadership-cohort",
@@ -525,6 +542,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       "20 community advocates trained and deployed",
       "4 policy changes influenced by programme graduates",
     ],
+    imageUrl: "/images/hanna-morris-6BhCI5uWiFQ-unsplash.jpg",
   },
 ];
 

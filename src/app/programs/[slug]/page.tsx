@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { CheckCircle2, MapPin, Calendar, Tag } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import Button from "@/components/shared/Button";
+import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { SAMPLE_PROJECTS } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 
@@ -54,6 +56,24 @@ export default function ProjectDetailPage({ params }: Props) {
 
             {/* ── Main content ── */}
             <div className="lg:col-span-2">
+              {project.imageUrl ? (
+                <div className="relative mb-8 h-56 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              ) : (
+                <ImagePlaceholder
+                  label={`${project.title} — Project Photo`}
+                  className="mb-8 h-56"
+                />
+              )}
+
               {/* Status badge */}
               <span
                 className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider ${

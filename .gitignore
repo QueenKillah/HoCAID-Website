@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch/utility scripts
+decode_pdf*.js
+extract_*.js
+
+# claude code
+.claude/

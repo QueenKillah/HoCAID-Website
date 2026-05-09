@@ -16,6 +16,7 @@ export interface Pillar {
   stats: { value: string; label: string }[];
   /** Short focus-area labels shown as chips */
   keyFocus: string[];
+  imageUrl?: string;
 }
 
 export interface Project {

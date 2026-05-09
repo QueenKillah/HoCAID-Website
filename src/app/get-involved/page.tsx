@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle2, Mail } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
@@ -95,6 +96,16 @@ export default function GetInvolvedPage() {
                   </li>
                 ))}
               </ul>
+
+              <div className="relative mt-8 h-48 w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/hanna-morris-3EkT6xb4K9w-unsplash.jpg"
+                  alt="Children in a HoCAID community programme"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div>
               <VolunteerForm />

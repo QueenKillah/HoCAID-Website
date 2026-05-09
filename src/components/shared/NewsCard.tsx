@@ -11,7 +11,7 @@ interface Props {
 const NewsCard: FC<Props> = ({ article }) => {
   return (
     <article className="flex flex-col rounded-xl bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-      {article.imageUrl && (
+      {article.imageUrl ? (
         <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
           <Image
             src={article.imageUrl}
@@ -21,6 +21,14 @@ const NewsCard: FC<Props> = ({ article }) => {
             className="object-cover"
             loading="lazy"
           />
+        </div>
+      ) : (
+        <div className="relative flex h-44 w-full items-center justify-center overflow-hidden rounded-t-xl bg-gradient-to-br from-navy/5 to-navy/10">
+          <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gradient-to-r from-orange/50 via-gold/40 to-transparent" />
+          <div className="absolute left-0 top-0 h-full w-1 rounded-tl-xl bg-gradient-to-b from-orange via-gold to-transparent opacity-60" />
+          <p className="text-xs font-semibold uppercase tracking-widest text-navy/35">
+            {article.category} Story
+          </p>
         </div>
       )}
       <div className="flex flex-1 flex-col p-4 md:p-6">

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Button from "@/components/shared/Button";
+import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import { PILLARS } from "@/lib/constants";
 
 interface Props {
@@ -79,6 +81,23 @@ export default function PillarPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+
+              {pillar.imageUrl ? (
+                <div className="relative mt-10 h-52 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={pillar.imageUrl}
+                    alt={`${pillar.title} field work`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <ImagePlaceholder
+                  label={`${pillar.shortTitle} Field Work Photo`}
+                  className="mt-10 h-52"
+                />
+              )}
             </div>
 
             {/* Right: stats + focus chips */}

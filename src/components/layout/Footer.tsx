@@ -94,14 +94,16 @@ const Footer: FC = () => {
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" aria-label={`${SITE_NAME} — home`} className="inline-block">
-              <Image
-                src="/images/logo-white.png"
-                alt={SITE_NAME}
-                width={140}
-                height={48}
-                className="mb-4 h-12 w-auto object-contain"
-              />
+            <Link href="/" aria-label={`${SITE_NAME} — home`} className="mb-4 inline-block">
+              <div className="rounded-lg bg-white px-2 py-1.5">
+                <Image
+                  src="/images/logo.png"
+                  alt={SITE_NAME}
+                  width={120}
+                  height={40}
+                  className="h-9 w-auto object-contain"
+                />
+              </div>
             </Link>
             <p className="max-w-[260px] text-sm leading-relaxed text-white/70">
               {SITE_TAGLINE}

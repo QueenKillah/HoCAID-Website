@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Heart,
   Shield,
@@ -100,6 +101,17 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+
+          {/* Community photo */}
+          <div className="relative mt-14 h-64 w-full overflow-hidden rounded-2xl lg:h-80">
+            <Image
+              src="/images/sadek-husein-H7zmvS9X3yY-unsplash.jpg"
+              alt="HoCAID community — aerial view of a hillside settlement"
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -190,15 +202,15 @@ export default function AboutPage() {
                 delay={i * 0.08}
                 className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-black/5"
               >
-                {/* Avatar placeholder */}
-                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-navy/10">
-                  <span className="font-display text-2xl font-bold text-navy">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </span>
+                {/* Team member photo */}
+                <div className="mb-4 h-20 w-20 overflow-hidden rounded-full ring-2 ring-orange/20">
+                  <Image
+                    src={`/images/profile-${i}.jpg`}
+                    alt={member.name}
+                    width={80}
+                    height={80}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <h3 className="font-display text-lg font-bold text-navy">
                   {member.name}

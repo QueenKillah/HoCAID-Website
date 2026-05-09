@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
 import NewsCard from "@/components/shared/NewsCard";
@@ -61,10 +62,28 @@ export default function NewsPage() {
                 Read full story →
               </span>
             </div>
-            <div
-              aria-hidden="true"
-              className="hidden rounded-xl bg-navy/5 lg:col-span-2 lg:block"
-            />
+            {featured.imageUrl ? (
+              <div className="relative hidden min-h-[280px] overflow-hidden rounded-xl lg:col-span-2 lg:block">
+                <Image
+                  src={featured.imageUrl}
+                  alt={featured.title}
+                  fill
+                  sizes="40vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ) : (
+              <div
+                aria-hidden="true"
+                className="relative hidden overflow-hidden rounded-xl lg:col-span-2 lg:flex lg:items-center lg:justify-center"
+                style={{ background: "linear-gradient(135deg, #0C2340 0%, #1a3a5c 100%)" }}
+              >
+                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-orange via-gold to-transparent" />
+                <p className="px-8 text-center text-xs font-semibold uppercase tracking-widest text-white/30">
+                  Featured Story Photo
+                </p>
+              </div>
+            )}
           </Link>
           </FadeUp>
         </div>
