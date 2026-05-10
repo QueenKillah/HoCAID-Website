@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#166534"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g3)"/>
+  <rect x="80" y="220" width="640" height="2" fill="#FBBF24" opacity="0.4"/>
+  <text x="400" y="268" font-family="Georgia,serif" font-size="13" font-weight="normal" fill="#FBBF24" text-anchor="middle" letter-spacing="3">IMPACT STORY #3</text>
+  <text x="400" y="316" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#FEF9F0" text-anchor="middle">Climate Change &amp;</text>
+  <text x="400" y="350" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#FEF9F0" text-anchor="middle">Environmental Health</text>
+  <rect x="80" y="378" width="640" height="2" fill="#FBBF24" opacity="0.4"/>
+</svg>

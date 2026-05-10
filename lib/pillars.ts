@@ -4,6 +4,7 @@ export interface Pillar {
   description: string;
   color: string;
   tailwindColor: string;
+  iconName: string;
 }
 
 export const pillars: Pillar[] = [
@@ -14,6 +15,7 @@ export const pillars: Pillar[] = [
       "Advancing equitable healthcare through primary care systems, pandemic preparedness, workforce capacity, and universal health coverage.",
     color: "#0EA5E9",
     tailwindColor: "sky-brand",
+    iconName: "Heart",
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ export const pillars: Pillar[] = [
       "Building food security through climate-smart agriculture, agribusiness development, value chains, nutrition, and sustainable livelihoods.",
     color: "#166534",
     tailwindColor: "forest",
+    iconName: "Wheat",
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const pillars: Pillar[] = [
       "Addressing the climate–health intersection through adaptation strategies, environmental sustainability, disaster preparedness, and community resilience.",
     color: "#166534",
     tailwindColor: "forest",
+    iconName: "CloudSun",
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ export const pillars: Pillar[] = [
       "Deploying digital tools, AI, and data systems to power monitoring, evidence-driven interventions, and operational excellence.",
     color: "#0C2340",
     tailwindColor: "navy",
+    iconName: "Cpu",
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ export const pillars: Pillar[] = [
       "Driving accountability, policy reform, citizen participation, and innovative financing mechanisms for sustainable development.",
     color: "#FBBF24",
     tailwindColor: "gold",
+    iconName: "Scale",
   },
   {
     id: 6,
@@ -54,5 +60,6 @@ export const pillars: Pillar[] = [
       "Championing grassroots participation, behaviour change, advocacy, and culturally responsive communication at the community level.",
     color: "#F97316",
     tailwindColor: "sunrise",
+    iconName: "Users",
   },
 ];
