@@ -31,7 +31,7 @@ export default function FinalCTA() {
               href="/donate"
               className="
                 inline-block px-10 py-4 rounded-lg text-center
-                font-sans font-semibold text-white text-sm sm:text-base
+                font-sans font-semibold text-navy text-sm sm:text-base
                 bg-gradient-to-r from-sunrise to-gold
                 hover:opacity-90 active:opacity-80 transition-opacity
                 focus-visible:outline-none focus-visible:ring-2

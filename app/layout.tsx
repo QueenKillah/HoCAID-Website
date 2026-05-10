@@ -18,7 +18,11 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+// TODO: set NEXT_PUBLIC_SITE_URL=https://hocaid.org in Vercel env vars at deploy time
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hocaid.org";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s — HoCAID",
     default: "HoCAID — Rising Together Towards a Better Tomorrow",
@@ -36,6 +40,26 @@ export const metadata: Metadata = {
   },
 };
 
+// Organization structured data (JSON-LD)
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "HoCAID",
+  alternateName: "Horizon Community Initiative for Aid and Development",
+  url: siteUrl,
+  logo: `${siteUrl}/logo.png`,
+  description:
+    "Horizon Community Initiative for Aid and Development (HoCAID) strengthens health systems, drives food security, champions climate resilience, and empowers communities across Africa.",
+  foundingDate: "2026-04",
+  areaServed: "Africa",
+  sameAs: [
+    "https://x.com/hocaid",
+    "https://linkedin.com/company/hocaid-ng",
+    "https://instagram.com/hocaidng",
+    "https://facebook.com/hocaid",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,6 +67,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
       <body className="font-sans antialiased bg-cream text-navy">
         <Header />
         <main>{children}</main>

@@ -2,17 +2,18 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import type { Transition } from "framer-motion";
 
 export default function HeroOverlay() {
   const shouldReduceMotion = useReducedMotion();
 
-  const instant = { duration: 0 };
+  const instant: Transition = { duration: 0 };
 
-  const headlineTransition = shouldReduceMotion
+  const headlineTransition: Transition = shouldReduceMotion
     ? instant
     : { duration: 0.9, delay: 3, ease: "easeOut" };
 
-  const ctaTransition = shouldReduceMotion
+  const ctaTransition: Transition = shouldReduceMotion
     ? instant
     : { duration: 0.7, delay: 3.5, ease: "easeOut" };
 
@@ -50,10 +51,7 @@ export default function HeroOverlay() {
           Rising Together Towards a Better Tomorrow
         </h1>
 
-        <p
-          className="font-sans font-medium mt-4 text-base sm:text-lg md:text-xl"
-          style={{ color: "#FBBF24" }}
-        >
+        <p className="font-sans font-medium mt-4 text-base sm:text-lg md:text-xl text-gold">
           Aid. Develop. Transform.
         </p>
       </motion.div>
@@ -70,7 +68,7 @@ export default function HeroOverlay() {
           href="/donate"
           className="
             inline-block px-8 py-3 rounded-lg text-center
-            font-sans font-semibold text-white text-sm sm:text-base
+            font-sans font-semibold text-navy text-sm sm:text-base
             bg-gradient-to-r from-sunrise to-gold
             hover:opacity-90 active:opacity-80 transition-opacity
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2

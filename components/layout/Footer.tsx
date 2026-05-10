@@ -10,9 +10,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", label: "X (Twitter)", icon: X },
-  { href: "#", label: "LinkedIn", icon: Globe },
-  { href: "#", label: "Facebook", icon: Share2 },
+  { href: "https://x.com/hocaid", label: "X (Twitter)", icon: X },
+  { href: "https://linkedin.com/company/hocaid-ng", label: "LinkedIn", icon: Globe },
+  { href: "https://instagram.com/hocaidng", label: "Instagram", icon: Share2 },
 ];
 
 export default function Footer() {
@@ -92,7 +92,12 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-white/70">
                 <Phone size={16} className="flex-shrink-0 text-gold" />
-                <span>+234 — (to be confirmed)</span>
+                <a
+                  href="tel:+2348064749454"
+                  className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise rounded"
+                >
+                  +234 806 474 9454
+                </a>
               </li>
             </ul>
           </div>

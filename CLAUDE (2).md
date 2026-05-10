@@ -117,9 +117,10 @@ Each layer is a separate `<motion.div>` or `<motion.g>` inside an SVG, so they c
 
 1. **Sky gradient layer** — full viewport. Animates from pre-dawn (deep indigo `#1a1f3a` at top, dusty rose `#3d2540` at horizon) to morning (soft cream `#FEF9F0` at top, warm peach `#FFD9A8` at horizon) over 5 seconds. Use `linearGradient` inside SVG with `<animate>` on stop colours, OR Framer Motion animating CSS variables on a div with a CSS gradient.
 2. **Distant atmospheric haze** — a soft horizontal band at the horizon, blurred (`filter: blur(20px)`), warm orange `#F97316` at 30% opacity. Fades in as the sun rises.
-3. **The sun** — a circle that begins **below** the hill silhouette (translateY out of view) and rises smoothly to sit half-emerged, then fully above. Two parts:
-   - **Sun core:** radial gradient, centre `#FFF4D6` → mid `#FBBF24` (Horizon Gold) → edge `#F97316` (Sunrise Orange).
-   - **Sun glow / corona:** a larger soft circle around the core, blurred heavily, gold at 40% opacity, that grows and pulses subtly (3-second loop, scale 1 ↔ 1.05) once the sun has risen.
+3. **The sun** — begins **below** the hill silhouette (translateY out of view) and rises smoothly to sit above the crest. Three parts:
+   - **Sun core:** a small, intensely bright point of light (~50 SVG units on a 1440×810 viewBox). Radial gradient: centre solid white `#FFFFFF` (overexposed — inner 30% is pure white) → `#FFF4D6` → `#FBBF24` (Horizon Gold) at the edge.
+   - **Sun rays:** 12 alternating long/short rays radiating from the core as thin tapered triangles (wider at the base, tapering to a point at the tip). Long rays at 0°/60°/120°/180°/240°/300° (30° spacing); short rays between at 30°/90°/150°/210°/270°/330°. Cardinal rays at 0° (top) and 180° (bottom) are 1.2× the diagonal long rays (240 vs 200 SVG units). Short rays are 100 SVG units. Fill: radial gradient white→transparent gold (`gradientUnits="userSpaceOnUse"` centred on the sun) so tips dissolve into the sky. A feGaussianBlur (stdDeviation=3) on the ray group softens them. The entire ray group rotates 360° over 60 s (barely perceptible). Rays bloom in from t=2 s to t=4 s (opacity 0→1, scale 0.4→1.1→1 with easing [0.22, 1, 0.36, 1] — the 1.1 overshoot at t=3.8 s creates a "blooming" expansion).
+   - **Outer glow / corona:** a large soft circle (r=600 SVG units, ~3× long-ray length), blurred heavily (feGaussianBlur stdDeviation=35), `#FBBF24` at ~25% opacity — atmospheric scattering around the rayed sun. The entire sun group (core + rays + halo) pulses together: scale 1 ↔ 1.05, 3-second loop, easeInOut, starting at ~5.2 s once the rise settles.
 4. **Light bloom** — a radial gradient overlay centred where the sun sits, golden at the centre fading to transparent at the edges. Fades in to ~50% opacity as the sun rises, brightening the entire hero. This is what makes the scene feel *bright* rather than just decorated.
 5. **Far hills** — soft silhouette in `#1a3a2e` (very dark forest green) at ~40% opacity, slightly blurred. Static.
 6. **Near hills** — sharper silhouette in `#0C2340` (Deep Navy) at full opacity. Static. The horizon line where these meet the sky is where the sun rises from.
@@ -129,7 +130,10 @@ Each layer is a separate `<motion.div>` or `<motion.g>` inside an SVG, so they c
 - Sun rise motion: `ease: [0.22, 1, 0.36, 1]` (Framer Motion's "ease-out-expo" feel) — slow start, smooth settle. Do not use `linear` or default `easeInOut`; the sun must feel like it's climbing against gravity, not sliding.
 - Sky gradient: `ease: 'easeInOut'` over 5s.
 - Light bloom: `ease: 'easeOut'`, delayed 1s after sun starts rising.
-- Sun pulse (post-rise): infinite loop, 3s, `ease: 'easeInOut'`.
+- Sun pulse (post-rise): infinite loop, 3s, `ease: 'easeInOut'`. Applies to core + rays as a group.
+- Ray rotation: `ease: 'linear'`, 60 s per full revolution, `repeat: Infinity`. Not rendered for `prefers-reduced-motion` users (they see the SettledScene static frame).
+- Ray shimmer (post-rise): opacity 0.85 ↔ 1, 4 s loop, `ease: 'easeInOut'`, `delay: 5.2 s` — intentionally offset from the scale pulse so they never synchronise.
+- Ray bloom (during rise): opacity 0→1, scale 0.4→1.1→1, between t=2 s and t=4 s, `ease: [0.22, 1, 0.36, 1]`.
 
 ### 6.4 Headline overlay
 Positioned over the lower-middle of the scene, fades in at 3s:

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   Heart,
   Wheat,
@@ -58,7 +59,7 @@ export default function Pillars() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 28 },
     visible: {
       opacity: 1,

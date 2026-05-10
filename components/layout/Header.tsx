@@ -48,7 +48,7 @@ export default function Header() {
             ))}
             <Link
               href="/donate"
-              className="ml-4 px-4 py-2 rounded bg-gradient-to-r from-sunrise to-gold text-white font-sans text-sm font-semibold hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="ml-4 px-4 py-2 rounded bg-gradient-to-r from-sunrise to-gold text-navy font-sans text-sm font-semibold hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             >
               Donate Now
             </Link>
@@ -84,7 +84,7 @@ export default function Header() {
           ))}
           <Link
             href="/donate"
-            className="block mt-3 px-4 py-2 rounded bg-gradient-to-r from-sunrise to-gold text-white font-sans text-sm font-semibold text-center hover:opacity-90 transition-opacity"
+            className="block mt-3 px-4 py-2 rounded bg-gradient-to-r from-sunrise to-gold text-navy font-sans text-sm font-semibold text-center hover:opacity-90 transition-opacity"
             onClick={() => setMobileOpen(false)}
           >
             Donate Now
