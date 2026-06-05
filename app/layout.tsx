@@ -3,6 +3,9 @@ import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import CookieBanner from "@/components/ui/CookieBanner";
+import NavigationProgress from "@/components/ui/NavigationProgress";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,7 +21,6 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-// TODO: set NEXT_PUBLIC_SITE_URL=https://hocaid.org in Vercel env vars at deploy time
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hocaid.org";
 
 export const metadata: Metadata = {
@@ -40,7 +42,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Organization structured data (JSON-LD)
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -53,10 +54,10 @@ const orgSchema = {
   foundingDate: "2026-04",
   areaServed: "Africa",
   sameAs: [
-    "https://x.com/hocaid",
-    "https://linkedin.com/company/hocaid-ng",
-    "https://instagram.com/hocaidng",
-    "https://facebook.com/hocaid",
+    "https://www.twitter.com/hocaidng",
+    "https://www.linkedin.com/company/hocaid",
+    "https://www.instagram.com/hocaidng",
+    "https://www.facebook.com/hocaid",
   ],
 };
 
@@ -74,9 +75,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-cream text-navy">
+        <NavigationProgress />
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <CookieBanner />
       </body>
     </html>
   );

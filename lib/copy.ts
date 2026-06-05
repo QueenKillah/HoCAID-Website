@@ -13,7 +13,7 @@ export const copy = {
     name: "Horizon Community Initiative for Aid and Development",
     shortName: "HoCAID",
     established: "April 2026",
-    email: "info@hocaid.org",
-    address: "Nigeria",
+    email: "hocaid.ng@gmail.com",
+    address: "Abuja, Nigeria",
   },
 };

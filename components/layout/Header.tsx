@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/programmes", label: "Programmes" },
+  { href: "/careers", label: "Careers" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },
 ];
@@ -25,14 +26,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <Image
-              src="/logo-white.png"
-              alt="HoCAID — Horizon Community Initiative for Aid and Development"
-              width={120}
-              height={40}
-              className="h-10 w-auto brightness-0 invert"
-              priority
-            />
+            <div className="h-10 md:h-12 overflow-hidden flex items-center">
+              <Image
+                src="/images/Logo_image_without_bg.png"
+                alt="HoCAID — Horizon Community Initiative for Aid and Development"
+                width={160}
+                height={48}
+                className="h-10 md:h-12 w-auto"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop nav */}

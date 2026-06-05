@@ -3,7 +3,47 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ShieldCheck, Users, Lightbulb, Leaf, Scale, Globe } from "lucide-react";
 import { copy } from "@/lib/copy";
+
+const coreValues = [
+  {
+    icon: ShieldCheck,
+    name: "Integrity",
+    description:
+      "We operate with honesty, transparency, and accountability in every action — toward our communities, partners, and donors.",
+  },
+  {
+    icon: Users,
+    name: "Community First",
+    description:
+      "Every decision begins and ends with the voices and leadership of the communities we serve. We follow; we do not impose.",
+  },
+  {
+    icon: Lightbulb,
+    name: "Innovation",
+    description:
+      "We embrace creative, evidence-based approaches to tackle complex development challenges — leveraging data, technology, and local wisdom equally.",
+  },
+  {
+    icon: Leaf,
+    name: "Sustainability",
+    description:
+      "We build capacities, systems, and institutions designed to endure long after our direct involvement ends.",
+  },
+  {
+    icon: Scale,
+    name: "Equity",
+    description:
+      "We address root causes of inequality, not just symptoms — centring those who are furthest from opportunity in everything we do.",
+  },
+  {
+    icon: Globe,
+    name: "Collaboration",
+    description:
+      "We partner deeply across sectors, borders, and disciplines, because no organisation solves complex challenges alone.",
+  },
+];
 
 function FadeUp({
   children,
@@ -136,7 +176,44 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── 4. Our Story ────────────────────────────────────────────────────── */}
+      {/* ── 4. Core Values ──────────────────────────────────────────────────── */}
+      <section className="bg-cream py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <FadeUp>
+            <p className="font-sans font-semibold text-sunrise uppercase tracking-widest text-sm mb-4 text-center">
+              What We Stand For
+            </p>
+            <h2
+              className="font-display font-bold text-navy leading-tight text-center mb-16
+                         text-3xl sm:text-4xl"
+            >
+              Our Core Values
+            </h2>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreValues.map((v, i) => (
+              <FadeUp key={v.name} delay={i * 0.08}>
+                <div className="bg-white rounded-2xl p-8 h-full border border-navy/8 hover:border-sunrise/30 transition-colors">
+                  <v.icon
+                    size={28}
+                    className="text-sunrise mb-5"
+                    aria-hidden="true"
+                  />
+                  <h3 className="font-display font-bold text-navy text-xl mb-3">
+                    {v.name}
+                  </h3>
+                  <p className="font-sans text-navy/65 text-sm leading-relaxed">
+                    {v.description}
+                  </p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Our Story ────────────────────────────────────────────────────── */}
       <section className="bg-cream py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeUp>
