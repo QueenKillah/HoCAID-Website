@@ -188,7 +188,7 @@ export default function CareersContent() {
               Work With Us
             </p>
             <h1 className="font-display font-bold text-white leading-tight text-4xl sm:text-5xl md:text-6xl mb-6">
-              Join Us &amp; Volunteer
+              Join Us
             </h1>
             <p className="font-sans text-white/75 text-xl sm:text-2xl leading-relaxed mb-10">
               Be Part of the Change You Want to See
