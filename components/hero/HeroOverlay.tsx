@@ -51,7 +51,7 @@ export default function HeroOverlay() {
           Rising Together Towards a Better Tomorrow
         </h1>
 
-        <p className="font-sans font-medium mt-4 text-base sm:text-lg md:text-xl text-gold">
+        <p className="font-sans font-bold mt-4 text-base sm:text-lg md:text-xl text-white">
           Aid. Develop. Transform.
         </p>
       </motion.div>
