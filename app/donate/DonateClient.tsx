@@ -384,14 +384,21 @@ export default function DonateClient() {
           {/* Account rows */}
           <div className="divide-y divide-navy/8">
             {[
-              { currency: "NGN", flag: "🇳🇬", label: "Nigerian Naira", account: "0148139410" },
-              { currency: "GBP", flag: "🇬🇧", label: "British Pound", account: "0148400680", sort: "23-21-50-016" },
-              { currency: "USD", flag: "🇺🇸", label: "US Dollar", account: "0148400563", sort: "23-21-50-016" },
-              { currency: "EUR", flag: "🇪🇺", label: "Euro", account: "0148400587", sort: "23-21-50-016" },
-            ].map(({ currency, flag, label, account, sort }) => (
+              { currency: "NGN", code: "ng", label: "Nigerian Naira", account: "0148139410" },
+              { currency: "GBP", code: "gb", label: "British Pound", account: "0148400680", sort: "23-21-50-016" },
+              { currency: "USD", code: "us", label: "US Dollar", account: "0148400563", sort: "23-21-50-016" },
+              { currency: "EUR", code: "eu", label: "Euro", account: "0148400587", sort: "23-21-50-016" },
+            ].map(({ currency, code, label, account, sort }) => (
               <div key={currency} className="px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-xl leading-none" aria-hidden="true">{flag}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://flagcdn.com/w40/${code}.png`}
+                    alt={label}
+                    width={28}
+                    height={20}
+                    className="rounded-sm object-cover flex-shrink-0"
+                  />
                   <div>
                     <span className="font-sans font-semibold text-navy text-sm">{currency}</span>
                     <span className="font-sans text-navy/50 text-xs ml-2">{label}</span>
