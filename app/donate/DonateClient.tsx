@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { usePaystackPayment } from "react-paystack";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { CheckCircle2, ShieldCheck } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Landmark } from "lucide-react";
 import { toKobo, PAYSTACK_PUBLIC_KEY } from "@/lib/paystack";
 
 // ── Schema ────────────────────────────────────────────────────────────────────
@@ -357,6 +357,68 @@ export default function DonateClient() {
           </p>
         </motion.form>
       </div>
+
+      {/* ── Bank Transfer ── */}
+      <motion.div
+        initial={{ opacity: 0, y: yOff }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : 0.24, ease: "easeOut" }}
+        className="max-w-2xl mx-auto mt-14"
+      >
+        {/* Divider */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-navy/15" />
+          <span className="font-sans text-sm text-navy/45 font-medium tracking-wide uppercase">
+            Or donate via bank transfer
+          </span>
+          <div className="flex-1 h-px bg-navy/15" />
+        </div>
+
+        <div className="bg-white rounded-2xl border border-navy/10 shadow-sm overflow-hidden">
+          {/* Card header */}
+          <div className="flex items-center gap-3 px-6 py-4 bg-navy">
+            <Landmark className="w-5 h-5 text-gold flex-shrink-0" aria-hidden="true" />
+            <span className="font-display font-bold text-white text-lg">Sterling Bank</span>
+          </div>
+
+          {/* Account rows */}
+          <div className="divide-y divide-navy/8">
+            {[
+              { currency: "NGN", flag: "🇳🇬", label: "Nigerian Naira", account: "0148139410" },
+              { currency: "GBP", flag: "🇬🇧", label: "British Pound", account: "0148400680", sort: "23-21-50-016" },
+              { currency: "USD", flag: "🇺🇸", label: "US Dollar", account: "0148400563", sort: "23-21-50-016" },
+              { currency: "EUR", flag: "🇪🇺", label: "Euro", account: "0148400587", sort: "23-21-50-016" },
+            ].map(({ currency, flag, label, account, sort }) => (
+              <div key={currency} className="px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl leading-none" aria-hidden="true">{flag}</span>
+                  <div>
+                    <span className="font-sans font-semibold text-navy text-sm">{currency}</span>
+                    <span className="font-sans text-navy/50 text-xs ml-2">{label}</span>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-mono font-bold text-navy text-base tracking-wider">{account}</p>
+                  {sort && (
+                    <p className="font-sans text-navy/45 text-xs mt-0.5">Sort code: {sort}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer note */}
+          <div className="px-6 py-3 bg-cream/70 border-t border-navy/8">
+            <p className="font-sans text-navy/50 text-xs text-center">
+              Please use your name as the payment reference. Contact us at{" "}
+              <a href="mailto:info@hocaid.org" className="text-navy underline underline-offset-2 hover:text-sunrise transition-colors">
+                info@hocaid.org
+              </a>{" "}
+              after transferring so we can acknowledge your gift.
+            </p>
+          </div>
+        </div>
+      </motion.div>
 
       {/* ── Toast ── */}
       <AnimatePresence>
