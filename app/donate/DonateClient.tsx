@@ -70,6 +70,7 @@ export default function DonateClient() {
   const [customAmt, setCustomAmt] = useState("");
   const [toastMsg, setToastMsg] = useState("");
   const [toastVisible, setToastVisible] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const isCustom = selectedIdx === CUSTOM_IDX;
   const effectiveAmount = isCustom
@@ -109,9 +110,20 @@ export default function DonateClient() {
       return;
     }
     initializePayment({
-      onSuccess: (ref) => {
+      onSuccess: async (ref) => {
         const reference = (ref as { reference?: string })?.reference ?? "";
-        router.push(`/donate/thank-you?ref=${reference}`);
+        setIsVerifying(true);
+        try {
+          const res = await fetch(`/api/paystack/verify?reference=${encodeURIComponent(reference)}`);
+          const data = (await res.json()) as { amount?: number };
+          const params = new URLSearchParams({ ref: reference });
+          if (res.ok && data.amount) params.set("amount", String(data.amount));
+          router.push(`/donate/thank-you?${params.toString()}`);
+        } catch {
+          router.push(`/donate/thank-you?ref=${reference}`);
+        } finally {
+          setIsVerifying(false);
+        }
       },
       onClose: () => {
         showToast("No worries — you can donate any time.");
@@ -334,7 +346,7 @@ export default function DonateClient() {
           {/* Submit */}
           <button
             type="submit"
-            disabled={!effectiveAmount || isSubmitting}
+            disabled={!effectiveAmount || isSubmitting || isVerifying}
             className={[
               "w-full py-4 rounded-xl font-sans font-bold text-navy text-base",
               "bg-gradient-to-r from-sunrise to-gold",
@@ -344,7 +356,7 @@ export default function DonateClient() {
               "disabled:opacity-50 disabled:cursor-not-allowed",
             ].join(" ")}
           >
-            {isSubmitting ? "Opening payment…" : `Donate ${amountLabel}`}
+            {isVerifying ? "Verifying payment…" : isSubmitting ? "Opening payment…" : `Donate ${amountLabel}`}
           </button>
 
           {/* Reassurance */}

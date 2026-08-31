@@ -1,8 +1,19 @@
 import crypto from "crypto";
 import { NextResponse } from "next/server";
 
+interface PaystackEvent {
+  event?: string;
+  data?: {
+    amount?: number;
+    currency?: string;
+    reference?: string;
+    paid_at?: string;
+    customer?: { email?: string; first_name?: string; last_name?: string };
+    metadata?: Record<string, unknown>;
+  };
+}
+
 export async function POST(req: Request) {
-  // Read raw body before any parsing — Paystack signs the exact bytes it sends
   const rawBody = await req.text();
 
   const secret = process.env.PAYSTACK_SECRET_KEY;
@@ -11,12 +22,8 @@ export async function POST(req: Request) {
     return new NextResponse("Server misconfiguration", { status: 500 });
   }
 
-  // Verify HMAC SHA-512 signature
-  const expected = crypto
-    .createHmac("sha512", secret)
-    .update(rawBody)
-    .digest("hex");
-
+  // Verify HMAC SHA-512 signature before trusting any payload data
+  const expected = crypto.createHmac("sha512", secret).update(rawBody).digest("hex");
   const received = req.headers.get("x-paystack-signature") ?? "";
 
   if (expected !== received) {
@@ -24,11 +31,6 @@ export async function POST(req: Request) {
     return new NextResponse("Invalid signature", { status: 401 });
   }
 
-  // Parse verified payload
-  interface PaystackEvent {
-    event?: string;
-    data?: { amount?: number; reference?: string; customer?: { email?: string } };
-  }
   let event: PaystackEvent;
   try {
     event = JSON.parse(rawBody) as PaystackEvent;
@@ -36,26 +38,26 @@ export async function POST(req: Request) {
     return new NextResponse("Invalid JSON", { status: 400 });
   }
 
-  const eventType = event.event ?? "unknown";
-  const amount = event.data?.amount ?? 0;
+  if (event.event === "charge.success") {
+    const { reference, amount, currency, paid_at, customer } = event.data ?? {};
 
-  console.log(
-    `[Paystack Webhook] ${eventType} | ₦${(amount / 100).toFixed(2)} | ref: ${event.data?.reference ?? "—"}`
-  );
+    const donation = {
+      reference,
+      amount_kobo: amount,
+      amount_display: `${currency ?? "NGN"} ${((amount ?? 0) / 100).toFixed(2)}`,
+      email: customer?.email,
+      name: [customer?.first_name, customer?.last_name].filter(Boolean).join(" ") || null,
+      paid_at: paid_at ?? new Date().toISOString(),
+    };
 
-  // Return 200 immediately — Paystack requires acknowledgement within 5 seconds.
-  //
-  // To wire this to a database later:
-  //   1. After signature verification, push the raw event to a durable queue
-  //      (e.g. Inngest, Upstash QStash, Vercel Queues) and return 200 right away.
-  //   2. In the queue worker, handle each event.event type:
-  //        - "charge.success"  → mark donation as paid, send receipt email
-  //        - "transfer.failed" → flag for review
-  //        - etc.
-  //   3. Look up records using event.data.reference (store it at initiation time).
-  //   4. Use event.data.customer.email to associate with a donor profile.
-  //
-  // Never do heavy work (DB writes, email sends) synchronously in this handler.
+    // TODO: Replace this log with a database write (e.g. Supabase, Planetscale, Prisma).
+    // The `donation` object above contains everything you need to persist.
+    // Example: await db.donations.create({ data: donation });
+    console.log("[Paystack Webhook] charge.success →", JSON.stringify(donation));
+  } else {
+    console.log(`[Paystack Webhook] ${event.event ?? "unknown"} — no action taken`);
+  }
 
+  // Always return 200 immediately — Paystack retries if it doesn't receive one within 5 s
   return new NextResponse("OK", { status: 200 });
 }

@@ -10,6 +10,10 @@ import { Home, Share2, Check } from "lucide-react";
 export default function ThankYouContent() {
   const searchParams = useSearchParams();
   const ref = searchParams.get("ref") ?? "";
+  const amountKobo = Number(searchParams.get("amount") ?? 0);
+  const amountDisplay = amountKobo > 0
+    ? `₦${(amountKobo / 100).toLocaleString("en-NG", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`
+    : null;
   const shouldReduceMotion = useReducedMotion();
 
   const [copied, setCopied] = useState(false);
@@ -77,6 +81,13 @@ export default function ThankYouContent() {
         >
           Thank you for rising with us.
         </h1>
+
+        {/* Verified amount badge */}
+        {amountDisplay && (
+          <p className="inline-block font-display font-bold text-navy bg-white/90 rounded-full px-6 py-2 text-2xl mb-5 shadow">
+            {amountDisplay} donated
+          </p>
+        )}
 
         {/* Body */}
         <p className="font-sans text-white/90 text-lg leading-relaxed mb-4">
