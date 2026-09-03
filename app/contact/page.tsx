@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 // ── Social icon SVG paths (inline — lucide-react does not include brand icons) ──
-// TODO: Update all href values below with official HoCAID social profile URLs.
 const SOCIALS = [
   {
     label: "Twitter / X",
@@ -38,9 +37,6 @@ const SOCIALS = [
     path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
   },
 ];
-
-// ── Contact info rows ─────────────────────────────────────────────────────────
-// TODO: Replace placeholder values with official HoCAID contact details.
 
 function MailIcon() {
   return (
@@ -112,7 +108,7 @@ export default function ContactPage() {
                 Our details
               </h2>
 
-              {/* Email — TODO: replace with official address */}
+              {/* Email */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
                   <MailIcon />
@@ -130,7 +126,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Phone — TODO: replace with official number */}
+              {/* Phone */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
                   <PhoneIcon />
@@ -148,7 +144,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Address — TODO: replace with official office address */}
+              {/* Address */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
                   <MapPinIcon />
@@ -171,7 +167,6 @@ export default function ContactPage() {
                 <p className="font-sans font-semibold text-navy text-sm mb-4">
                   Follow us
                 </p>
-                {/* TODO: Update href values in the SOCIALS array at the top of this file */}
                 <div className="flex items-center gap-3">
                   {SOCIALS.map(({ label, href, path }) => (
                     <a

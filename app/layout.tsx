@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -22,6 +23,7 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hocaid.org";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -52,8 +54,9 @@ export const metadata: Metadata = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "NGO"],
   name: "HoCAID",
+  legalName: "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
   alternateName: "Horizon Community Initiative for Aid and Development",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
@@ -61,6 +64,18 @@ const orgSchema = {
     "Horizon Community Initiative for Aid and Development (HoCAID) strengthens health systems, drives food security, champions climate resilience, and empowers communities across Africa.",
   foundingDate: "2026-04",
   areaServed: "Africa",
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      name: "Certificate of Incorporation Number",
+      value: "9492937",
+    },
+    {
+      "@type": "PropertyValue",
+      name: "National Tax ID",
+      value: "2623728389617",
+    },
+  ],
   sameAs: [
     "https://www.twitter.com/hocaidng",
     "https://www.linkedin.com/company/hocaid",
@@ -83,6 +98,17 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-cream text-navy">
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
         <NavigationProgress />
         <Header />
         <main>{children}</main>

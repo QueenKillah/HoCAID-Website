@@ -11,7 +11,10 @@ export const copy = {
     "A world where every community has the knowledge, resources, and agency to thrive.",
   org: {
     name: "Horizon Community Initiative for Aid and Development",
+    legalName: "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
     shortName: "HoCAID",
+    registrationNumber: "9492937",
+    taxId: "2623728389617",
     established: "April 2026",
     email: "hocaid.ng@gmail.com",
     address: "Abuja, Nigeria",

@@ -150,9 +150,15 @@ export default function DonateClient() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-10"
         >
-          <h2 className="font-display font-bold text-navy text-2xl mb-6">
+          <h2 className="font-display font-bold text-navy text-2xl mb-3">
             Choose your contribution
           </h2>
+          <p className="font-sans text-navy/65 text-sm leading-relaxed mb-6">
+            Every gift goes directly towards HoCAID&apos;s six core programmes —
+            Health Systems, Food Security, Climate Resilience, Digital Innovation,
+            Governance &amp; Policy, and Community Engagement — empowering
+            communities across Nigeria and Africa.
+          </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
             {TIERS.map((tier, i) => {
@@ -367,6 +373,11 @@ export default function DonateClient() {
             />
             Secure payment via Paystack. Your data is protected.
           </p>
+          <p className="font-sans text-xs text-navy/40 text-center mt-2 leading-relaxed">
+            Horizon Community Initiative for Aid and Development is a registered
+            Nigerian NGO (RC&nbsp;No.&nbsp;9492937 · Tax&nbsp;ID&nbsp;2623728389617).
+            100% of donations fund our community programmes.
+          </p>
         </motion.form>
       </div>
 
@@ -430,8 +441,8 @@ export default function DonateClient() {
           <div className="px-6 py-3 bg-cream/70 border-t border-navy/8">
             <p className="font-sans text-navy/50 text-xs text-center">
               Please use your name as the payment reference. Contact us at{" "}
-              <a href="mailto:info@hocaid.org" className="text-navy underline underline-offset-2 hover:text-sunrise transition-colors">
-                info@hocaid.org
+              <a href="mailto:hocaid.ng@gmail.com" className="text-navy underline underline-offset-2 hover:text-sunrise transition-colors">
+                hocaid.ng@gmail.com
               </a>{" "}
               after transferring so we can acknowledge your gift.
             </p>

@@ -137,8 +137,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Horizon Community Initiative for Aid
             and Development. All rights reserved.
           </p>
-          <p className="font-sans text-xs text-white/50">
-            Registered NGO · Established April 2026
+          <p className="font-sans text-xs text-white/50 text-center sm:text-right">
+            Registered NGO · RC No.&nbsp;9492937 · Tax ID&nbsp;2623728389617 · Est. April 2026
           </p>
         </div>
       </div>

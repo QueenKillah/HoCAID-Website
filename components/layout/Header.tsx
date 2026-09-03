@@ -33,6 +33,7 @@ export default function Header() {
                 width={160}
                 height={48}
                 className="h-10 md:h-12 w-auto"
+                sizes="(max-width: 768px) 133px, 160px"
                 priority
               />
             </div>

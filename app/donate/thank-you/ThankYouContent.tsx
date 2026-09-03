@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import confetti from "canvas-confetti";
 import { Home, Share2, Check } from "lucide-react";
 
 export default function ThankYouContent() {
@@ -18,15 +17,18 @@ export default function ThankYouContent() {
 
   const [copied, setCopied] = useState(false);
 
-  // Confetti on mount — skipped when prefers-reduced-motion
+  // Confetti on mount — lazy-imported so it never adds to the initial JS bundle.
+  // Skipped when prefers-reduced-motion is active.
   useEffect(() => {
     if (shouldReduceMotion) return;
-    confetti({
-      particleCount: 130,
-      spread: 90,
-      origin: { y: 0.5 },
-      colors: ["#F97316", "#FBBF24", "#FEF9F0", "#0EA5E9"],
-      disableForReducedMotion: true,
+    import("canvas-confetti").then(({ default: confetti }) => {
+      confetti({
+        particleCount: 130,
+        spread: 90,
+        origin: { y: 0.5 },
+        colors: ["#F97316", "#FBBF24", "#FEF9F0", "#0EA5E9"],
+        disableForReducedMotion: true,
+      });
     });
   }, [shouldReduceMotion]);
 

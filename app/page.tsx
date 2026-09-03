@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import SunriseHero from "@/components/hero/SunriseHero";
 import Intro from "@/components/sections/Intro";
-import Pillars from "@/components/sections/Pillars";
-import Impact from "@/components/sections/Impact";
-import Gallery from "@/components/sections/Gallery";
-import Newsletter from "@/components/sections/Newsletter";
-import FinalCTA from "@/components/sections/FinalCTA";
+
+// Below-fold sections: split into separate lazy chunks so their JS is not
+// parsed/executed on initial page load, reducing mobile TBT significantly.
+const Pillars = dynamic(() => import("@/components/sections/Pillars"));
+const Impact = dynamic(() => import("@/components/sections/Impact"));
+const Gallery = dynamic(() => import("@/components/sections/Gallery"));
+const Newsletter = dynamic(() => import("@/components/sections/Newsletter"));
+const FinalCTA = dynamic(() => import("@/components/sections/FinalCTA"));
 
 export const metadata: Metadata = {
   // Use absolute to avoid "Home — HoCAID" — the root page IS the brand

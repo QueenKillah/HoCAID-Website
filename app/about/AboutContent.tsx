@@ -116,6 +116,12 @@ export default function AboutContent() {
             >
               Who We Are
             </h1>
+            <p className="font-sans text-white/60 text-base mb-6 leading-relaxed">
+              <strong className="text-white/80 font-semibold">
+                Horizon Community Initiative for Aid and Development (HoCAID)
+              </strong>{" "}
+              is a registered non-governmental organisation (NGO) established in Nigeria in April 2026.
+            </p>
             <div
               className="h-1 w-20 rounded-full bg-gradient-to-r from-sunrise to-gold"
               aria-hidden="true"
@@ -355,7 +361,59 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── 7. CTA strip ────────────────────────────────────────────────────── */}
+      {/* ── 7. Legal & Registration ──────────────────────────────────────────── */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeUp>
+            <p className="font-sans font-semibold text-sunrise uppercase tracking-widest text-sm mb-4 text-center">
+              Transparency &amp; Accountability
+            </p>
+            <h2
+              className="font-display font-bold text-navy leading-tight text-center mb-10
+                         text-3xl sm:text-4xl"
+            >
+              Legal Registration
+            </h2>
+          </FadeUp>
+
+          <FadeUp delay={0.1}>
+            <dl className="divide-y divide-navy/10 rounded-2xl border border-navy/10 overflow-hidden">
+              {[
+                {
+                  label: "Full Legal Name",
+                  value:
+                    "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
+                },
+                { label: "Certificate of Incorporation No.", value: "9492937" },
+                { label: "National Tax ID", value: "2623728389617" },
+                {
+                  label: "Organisation Type",
+                  value: "Non-Governmental Organisation (NGO)",
+                },
+                {
+                  label: "Jurisdiction",
+                  value: "Federal Republic of Nigeria",
+                },
+                { label: "Established", value: "April 2026" },
+              ].map(({ label, value }) => (
+                <div
+                  key={label}
+                  className="px-6 py-4 bg-cream sm:grid sm:grid-cols-5 sm:gap-4"
+                >
+                  <dt className="font-sans font-semibold text-navy/55 text-sm sm:col-span-2">
+                    {label}
+                  </dt>
+                  <dd className="font-sans text-navy text-sm font-medium mt-1 sm:mt-0 sm:col-span-3">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── 8. CTA strip ────────────────────────────────────────────────────── */}
       <section className="bg-navy py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <FadeUp>
