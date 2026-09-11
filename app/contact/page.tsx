@@ -49,6 +49,26 @@ function IdCardIcon() {
   );
 }
 
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
 
 export default function ContactPage() {
   return (
@@ -183,6 +203,36 @@ export default function ContactPage() {
                     CAC Reg. No.: RC 9492937<br />
                     Tax ID: 2623728389617
                   </p>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="h-px bg-navy/10" />
+
+              {/* Follow us */}
+              <div>
+                <p className="font-sans font-semibold text-navy text-sm mb-3">
+                  Follow us
+                </p>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/hocaidng"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="HoCAID on Instagram"
+                    className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+                  >
+                    <InstagramIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/116017593/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="HoCAID on LinkedIn"
+                    className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+                  >
+                    <LinkedinIcon />
+                  </a>
                 </div>
               </div>
             </div>

@@ -87,7 +87,7 @@ export default function HeroBanner() {
           className="flex flex-col sm:flex-row gap-4 mt-8 pointer-events-auto"
         >
           <Link
-            href="/donate"
+            href="/programmes"
             className="
               inline-block px-8 py-3 rounded-lg text-center
               font-sans font-semibold text-navy text-sm sm:text-base
@@ -97,10 +97,10 @@ export default function HeroBanner() {
               min-w-[160px]
             "
           >
-            Donate Now
+            Our Programmes
           </Link>
           <Link
-            href="/programmes"
+            href="/donate"
             className="
               inline-block px-8 py-3 rounded-lg text-center
               font-sans font-semibold text-white text-sm sm:text-base
@@ -110,7 +110,7 @@ export default function HeroBanner() {
               min-w-[160px]
             "
           >
-            Our Programmes
+            Donate Now
           </Link>
         </motion.div>
       </div>

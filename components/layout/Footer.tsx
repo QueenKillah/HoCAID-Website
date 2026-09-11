@@ -2,6 +2,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/programmes", label: "Programmes" },
@@ -32,6 +52,26 @@ export default function Footer() {
               Horizon Community Initiative for Aid and Development — rising
               together towards a better tomorrow.
             </p>
+            <div className="flex items-center gap-3 mt-5">
+              <a
+                href="https://www.instagram.com/hocaidng"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="HoCAID on Instagram"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/116017593/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="HoCAID on LinkedIn"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+              >
+                <LinkedinIcon />
+              </a>
+            </div>
           </div>
 
           {/* Navigation column */}

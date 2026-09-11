@@ -88,6 +88,10 @@ const orgSchema = {
       value: "2623728389617",
     },
   ],
+  sameAs: [
+    "https://www.instagram.com/hocaidng",
+    "https://www.linkedin.com/company/116017593/",
+  ],
 };
 
 export default function RootLayout({

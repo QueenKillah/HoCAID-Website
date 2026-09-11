@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { pillars } from "@/lib/pillars";
 
@@ -34,22 +33,9 @@ export default function PillarSections() {
                 <h2 className="font-display font-bold text-navy text-3xl sm:text-4xl leading-tight mb-5">
                   {pillar.title}
                 </h2>
-                <p className="font-sans text-navy/70 text-lg leading-relaxed max-w-3xl mb-7">
+                <p className="font-sans text-navy/70 text-lg leading-relaxed max-w-3xl">
                   {pillar.description}
                 </p>
-                <div className="border-l-4 border-sunrise bg-navy/5 px-5 py-4 max-w-3xl mb-8">
-                  <h3 className="font-sans font-semibold text-navy text-sm mb-1">Our approach</h3>
-                  <p className="font-sans text-navy/70 text-sm leading-relaxed">
-                    We are building our programme portfolio through community-centred learning,
-                    responsible collaboration, and evidence-informed planning.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-block px-6 py-3 rounded-lg font-sans font-semibold text-navy text-sm bg-gradient-to-r from-sunrise to-gold hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise focus-visible:ring-offset-2"
-                >
-                  Discuss a Partnership
-                </Link>
               </div>
             </motion.div>
           </section>
