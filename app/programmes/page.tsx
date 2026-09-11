@@ -5,11 +5,11 @@ import FinalCTA from "@/components/sections/FinalCTA";
 export const metadata: Metadata = {
   title: "Our Programmes",
   description:
-    "Six integrated pillars driving health systems, food security, climate resilience, digital innovation, governance, and community engagement across Africa.",
+    "Six integrated pillars driving health systems, food security, climate resilience, digital innovation, governance, and community engagement in Nigeria.",
   openGraph: {
     title: "Our Programmes — HoCAID",
     description:
-      "Six integrated pillars driving health systems, food security, climate resilience, digital innovation, governance, and community engagement across Africa.",
+      "Six integrated pillars driving health systems, food security, climate resilience, digital innovation, governance, and community engagement in Nigeria.",
   },
   twitter: { card: "summary_large_image" },
 };

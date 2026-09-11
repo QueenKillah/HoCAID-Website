@@ -19,11 +19,11 @@ export default function FinalCTA() {
             className="font-display font-bold text-white leading-tight mb-5
                        text-3xl sm:text-4xl md:text-5xl"
           >
-            Ready to make a difference?
+            Help shape a better tomorrow
           </h2>
 
           <p className="font-sans text-white/70 text-lg mb-10 leading-relaxed">
-            Every contribution lights the path for a community in need.
+            Learn about HoCAID&apos;s priorities, get in touch, or choose to support our work.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

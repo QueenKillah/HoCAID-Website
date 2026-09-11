@@ -159,10 +159,11 @@ export default function AboutContent() {
                 {copy.mission}
               </p>
               <p className="font-sans text-white/65 text-base leading-relaxed">
-                We pursue this mission through six integrated pillars — Health, Agriculture &amp;
-                Food Security, Environment &amp; Climate, Livelihoods &amp; Economic Empowerment,
-                Education &amp; Youth Development, and Humanitarian Aid — each reinforcing the
-                others to create lasting, systemic change.
+                We pursue this mission through six integrated pillars — Health Systems Strengthening,
+                Food Security, Agriculture &amp; Sustainable Livelihoods, Climate Change &amp;
+                Environmental Health, Digital Innovation, AI &amp; Data Intelligence,
+                Governance &amp; Policy Innovation, and Community Engagement, SBC &amp; Risk
+                Communication — each reinforcing the others to create lasting, systemic change.
               </p>
             </FadeUp>
 
@@ -332,16 +333,16 @@ export default function AboutContent() {
                 className="font-display font-bold text-navy leading-tight mb-6
                            text-2xl sm:text-3xl"
               >
-                Rooted in Nigeria, Rising Across Africa
+                Rooted in Nigeria
               </h2>
               <p className="font-sans text-navy/70 text-base leading-relaxed mb-4">
-                Our programmes are currently concentrated in Nigeria, where we work with
-                grassroots partners, local government authorities, and community-based
-                organisations to deliver targeted interventions across our six pillars.
+                Our programmes are concentrated in Nigeria, where we work with grassroots partners,
+                local government authorities, and community-based organisations to deliver targeted
+                interventions across our six pillars.
               </p>
               <p className="font-sans text-navy/70 text-base leading-relaxed">
-                As we grow, our vision extends across the continent — building a network of
-                resilient communities rising together toward a better tomorrow.
+                As we grow, our vision is to build a network of resilient communities — rising
+                together toward a better tomorrow.
               </p>
             </FadeUp>
 
@@ -381,21 +382,32 @@ export default function AboutContent() {
               {[
                 {
                   label: "Full Legal Name",
-                  value:
-                    "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
+                  value: "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
+                  isLink: false,
                 },
-                { label: "Certificate of Incorporation No.", value: "9492937" },
-                { label: "National Tax ID", value: "2623728389617" },
+                { label: "Public Name", value: "HoCAID", isLink: false },
+                { label: "CAC / Charity Registration No.", value: "RC 9492937", isLink: false },
+                { label: "Tax Identification Number", value: "2623728389617", isLink: false },
                 {
                   label: "Organisation Type",
                   value: "Non-Governmental Organisation (NGO)",
+                  isLink: false,
                 },
                 {
                   label: "Jurisdiction",
                   value: "Federal Republic of Nigeria",
+                  isLink: false,
                 },
-                { label: "Established", value: "April 2026" },
-              ].map(({ label, value }) => (
+                { label: "Established", value: "April 2026", isLink: false },
+                {
+                  label: "Registered Office",
+                  value: "No. 21, Henry Umahi Street, Trademore Estate, Lugbe, FCT, Nigeria",
+                  isLink: false,
+                },
+                { label: "General Email", value: "info@hocaid.org", isLink: true, href: "mailto:info@hocaid.org" },
+                { label: "Telephone", value: "+234 806 474 9454", isLink: true, href: "tel:+2348064749454" },
+                { label: "Website", value: "hocaid.org", isLink: true, href: "https://hocaid.org" },
+              ].map(({ label, value, isLink, href }) => (
                 <div
                   key={label}
                   className="px-6 py-4 bg-cream sm:grid sm:grid-cols-5 sm:gap-4"
@@ -404,7 +416,11 @@ export default function AboutContent() {
                     {label}
                   </dt>
                   <dd className="font-sans text-navy text-sm font-medium mt-1 sm:mt-0 sm:col-span-3">
-                    {value}
+                    {isLink && href ? (
+                      <a href={href} className="text-sunrise hover:underline focus-visible:outline-none focus-visible:underline">
+                        {value}
+                      </a>
+                    ) : value}
                   </dd>
                 </div>
               ))}

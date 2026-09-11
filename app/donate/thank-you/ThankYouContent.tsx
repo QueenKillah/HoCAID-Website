@@ -37,7 +37,7 @@ export default function ThankYouContent() {
       typeof window !== "undefined" ? window.location.origin : "https://hocaid.org";
     const shareData = {
       title: "HoCAID — Rising Together Towards a Better Tomorrow",
-      text: "I just donated to HoCAID. Join me in supporting communities across Africa.",
+      text: "I just donated to HoCAID. Join me in supporting communities in Nigeria.",
       url,
     };
 
@@ -93,7 +93,7 @@ export default function ThankYouContent() {
 
         {/* Body */}
         <p className="font-sans text-white/90 text-lg leading-relaxed mb-4">
-          Your generosity is lighting the path for communities across Africa.
+          Your generosity is lighting the path for communities in Nigeria.
           Every naira you gave brings us one step closer to a world where every
           community has the knowledge, resources, and agency to thrive.
         </p>

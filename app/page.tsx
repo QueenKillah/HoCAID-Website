@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     absolute: "HoCAID — Rising Together Towards a Better Tomorrow",
   },
   description:
-    "HoCAID strengthens health systems, drives food security, champions climate resilience, and empowers communities across Africa. Aid. Develop. Transform.",
+    "HoCAID strengthens health systems, drives food security, and champions climate resilience in Nigeria. Aid. Develop. Transform.",
   openGraph: {
     title: "HoCAID — Rising Together Towards a Better Tomorrow",
     description:
-      "Strengthening health systems, driving food security, and championing climate resilience across Africa.",
+      "Strengthening health systems, driving food security, and championing climate resilience in Nigeria.",
     url: "/",
   },
   twitter: { card: "summary_large_image" },

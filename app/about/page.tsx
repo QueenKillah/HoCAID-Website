@@ -4,7 +4,7 @@ import AboutContent from "./AboutContent";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about HoCAID — Horizon Community Initiative for Aid and Development. Our vision, mission, story, values, and the communities we serve across Nigeria and Africa.",
+    "Learn about HoCAID — Horizon Community Initiative for Aid and Development. Our vision, mission, story, core values, and the communities we serve in Nigeria.",
   openGraph: {
     title: "About HoCAID",
     description:

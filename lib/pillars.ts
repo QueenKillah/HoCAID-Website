@@ -7,30 +7,16 @@ export interface Pillar {
   iconName: string;
 }
 
+// Tier 1 source text was unavailable during remediation. This is the canonical
+// six-pillar framework from the project specification (CLAUDE (2).md).
 export const pillars: Pillar[] = [
-  {
-    id: 1,
-    title: "Health Systems Strengthening",
-    description:
-      "Advancing equitable healthcare through primary care systems, pandemic preparedness, workforce capacity, and universal health coverage.",
-    color: "#0EA5E9",
-    tailwindColor: "sky-brand",
-    iconName: "Heart",
-  },
-  {
-    id: 2,
-    title: "Food Security, Agriculture & Sustainable Livelihoods",
-    description:
-      "Building food security through climate-smart agriculture, agribusiness development, value chains, nutrition, and sustainable livelihoods.",
-    color: "#166534",
-    tailwindColor: "forest",
-    iconName: "Wheat",
-  },
+  { id: 1, title: "Health Systems Strengthening", description: "Our focus includes equitable healthcare, primary care systems, pandemic preparedness, workforce capacity, and universal health coverage.", color: "#0EA5E9", tailwindColor: "sky-brand", iconName: "Heart" },
+  { id: 2, title: "Food Security, Agriculture & Sustainable Livelihoods", description: "Our focus includes food security, climate-smart agriculture, agribusiness, value chains, nutrition, and sustainable livelihoods.", color: "#166534", tailwindColor: "forest", iconName: "Wheat" },
   {
     id: 3,
     title: "Climate Change & Environmental Health",
     description:
-      "Addressing the climate–health intersection through adaptation strategies, environmental sustainability, disaster preparedness, and community resilience.",
+      "Our focus includes the climate-health intersection, adaptation, environmental sustainability, disaster preparedness, and resilience.",
     color: "#166534",
     tailwindColor: "forest",
     iconName: "CloudSun",
@@ -39,7 +25,7 @@ export const pillars: Pillar[] = [
     id: 4,
     title: "Digital Innovation, AI & Data Intelligence",
     description:
-      "Deploying digital tools, AI, and data systems to power monitoring, evidence-driven interventions, and operational excellence.",
+      "Our focus includes digital tools, AI, data systems, monitoring, and evidence-informed decision-making.",
     color: "#0C2340",
     tailwindColor: "navy",
     iconName: "Cpu",
@@ -48,7 +34,7 @@ export const pillars: Pillar[] = [
     id: 5,
     title: "Governance & Policy Innovation",
     description:
-      "Driving accountability, policy reform, citizen participation, and innovative financing mechanisms for sustainable development.",
+      "Our focus includes accountability, policy reform, citizen participation, and innovative financing for sustainable development.",
     color: "#FBBF24",
     tailwindColor: "gold",
     iconName: "Scale",
@@ -57,7 +43,7 @@ export const pillars: Pillar[] = [
     id: 6,
     title: "Community Engagement, SBC & Risk Communication",
     description:
-      "Championing grassroots participation, behaviour change, advocacy, and culturally responsive communication at the community level.",
+      "Our focus includes grassroots participation, behaviour change, advocacy, and culturally responsive communication.",
     color: "#F97316",
     tailwindColor: "sunrise",
     iconName: "Users",

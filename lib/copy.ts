@@ -13,10 +13,10 @@ export const copy = {
     name: "Horizon Community Initiative for Aid and Development",
     legalName: "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
     shortName: "HoCAID",
-    registrationNumber: "9492937",
+    registrationNumber: "RC 9492937",
     taxId: "2623728389617",
     established: "April 2026",
-    email: "hocaid.ng@gmail.com",
-    address: "Abuja, Nigeria",
+    email: "info@hocaid.org",
+    address: "No. 21, Henry Umahi Street, Trademore Estate, Lugbe, FCT, Nigeria",
   },
 };

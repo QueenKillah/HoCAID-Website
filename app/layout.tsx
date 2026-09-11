@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     default: "HoCAID — Rising Together Towards a Better Tomorrow",
   },
   description:
-    "Horizon Community Initiative for Aid and Development (HoCAID) strengthens health systems, drives food security, champions climate resilience, and empowers communities across Africa.",
+    "Horizon Community Initiative for Aid and Development (HoCAID) is a Nigerian NGO strengthening health systems, driving food security, and championing climate resilience through community-led, evidence-based interventions.",
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -55,32 +55,38 @@ export const metadata: Metadata = {
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "NGO"],
-  name: "HoCAID",
+  name: "Horizon Community Initiative for Aid and Development",
   legalName: "HORIZON COMMUNITY INITIATIVE FOR AID AND DEVELOPMENT",
-  alternateName: "Horizon Community Initiative for Aid and Development",
+  alternateName: "HoCAID",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description:
-    "Horizon Community Initiative for Aid and Development (HoCAID) strengthens health systems, drives food security, champions climate resilience, and empowers communities across Africa.",
+    "Horizon Community Initiative for Aid and Development (HoCAID) is a Nigerian NGO strengthening health systems, driving food security, and championing climate resilience through community-led, evidence-based interventions.",
   foundingDate: "2026-04",
-  areaServed: "Africa",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "No. 21, Henry Umahi Street, Trademore Estate",
+    addressLocality: "Lugbe",
+    addressRegion: "Federal Capital Territory",
+    addressCountry: "NG",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+234-806-474-9454",
+    email: "info@hocaid.org",
+    contactType: "general enquiries",
+  },
   identifier: [
     {
       "@type": "PropertyValue",
-      name: "Certificate of Incorporation Number",
-      value: "9492937",
+      name: "CAC Registration Number",
+      value: "RC 9492937",
     },
     {
       "@type": "PropertyValue",
       name: "National Tax ID",
       value: "2623728389617",
     },
-  ],
-  sameAs: [
-    "https://www.twitter.com/hocaidng",
-    "https://www.linkedin.com/company/hocaid",
-    "https://www.instagram.com/hocaidng",
-    "https://www.facebook.com/hocaid",
   ],
 };
 

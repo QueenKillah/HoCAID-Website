@@ -7,7 +7,7 @@ const DonateClient = dynamic(() => import("./DonateClient"), { ssr: false });
 export const metadata: Metadata = {
   title: "Donate — Light the Path",
   description:
-    "Every gift fuels a community on its way to a better tomorrow. Donate to HoCAID today and help us strengthen health systems, drive food security, and champion climate resilience across Africa.",
+    "Every gift fuels a community on its way to a better tomorrow. Donate to HoCAID today and help us strengthen health systems, drive food security, and champion climate resilience in Nigeria.",
   openGraph: {
     title: "Light the Path — Donate to HoCAID",
     description:

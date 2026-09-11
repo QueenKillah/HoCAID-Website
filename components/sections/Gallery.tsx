@@ -93,10 +93,10 @@ export default function Gallery() {
             className="text-center mb-12"
           >
             <p className="font-sans font-semibold text-sunrise uppercase tracking-widest text-sm mb-3">
-              Our Impact
+              Our Priorities
             </p>
             <h2 className="font-display font-bold text-navy text-3xl sm:text-4xl">
-              Stories from the Field
+              Our Programme Areas
             </h2>
           </motion.div>
 

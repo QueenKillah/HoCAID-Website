@@ -16,7 +16,7 @@ export default function HeroBanner() {
       {rm ? (
         <Image
           src="/images/hero-sunrise.jpg"
-          alt="Sunrise over misty mountains — symbolising hope and new beginnings for communities across Africa"
+          alt="Sunrise over misty mountains — symbolising hope and new beginnings for the communities HoCAID serves"
           fill
           priority
           quality={85}
