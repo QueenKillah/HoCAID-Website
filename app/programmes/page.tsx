@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PillarSections from "./PillarSections";
+import ActivityCards from "./ActivityCards";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
@@ -51,6 +52,8 @@ export default function ProgrammesPage() {
           </div>
         </div>
       </section>
+
+      <ActivityCards />
 
       <PillarSections />
 
