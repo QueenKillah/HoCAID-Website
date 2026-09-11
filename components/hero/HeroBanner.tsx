@@ -9,7 +9,7 @@ export default function HeroBanner() {
 
   return (
     <section
-      className="relative w-full overflow-hidden h-[85vh] md:h-[90vh] lg:h-screen"
+      className="relative w-full overflow-hidden h-screen [height:100svh]"
       aria-label="Hero — Rising Together Towards a Better Tomorrow"
     >
       {/* Background: video for motion, still image for prefers-reduced-motion */}
@@ -21,7 +21,7 @@ export default function HeroBanner() {
           priority
           quality={85}
           sizes="100vw"
-          className="object-cover object-[70%_30%] sm:object-center"
+          className="object-cover object-[center_25%] sm:object-center"
         />
       ) : (
         <video
@@ -30,7 +30,7 @@ export default function HeroBanner() {
           loop
           playsInline
           poster="/images/hero-sunrise.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-[70%_30%] sm:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_25%] sm:object-center"
         >
           <source src="/videos/hero-sunrise.mp4" type="video/mp4" />
         </video>
