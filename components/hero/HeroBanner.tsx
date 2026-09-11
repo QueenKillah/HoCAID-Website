@@ -10,7 +10,7 @@ export default function HeroBanner() {
   return (
     <section
       className="relative w-full overflow-hidden h-[85vh] md:h-[90vh] lg:h-screen"
-      aria-label="Hero — Empowering Communities. Building Horizons."
+      aria-label="Hero — Rising Together Towards a Better Tomorrow"
     >
       {/* Background: video for motion, still image for prefers-reduced-motion */}
       {rm ? (
@@ -73,7 +73,7 @@ export default function HeroBanner() {
               textShadow: "0 2px 28px rgba(0,0,0,0.55), 0 1px 6px rgba(0,0,0,0.4)",
             }}
           >
-            Empowering Communities. Building Horizons.
+            Rising Together Towards a Better Tomorrow
           </h1>
           <p className="font-sans font-bold mt-4 text-base sm:text-lg md:text-xl text-white/90">
             Aid. Develop. Transform.
