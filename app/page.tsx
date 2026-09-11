@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import SunriseHero from "@/components/hero/SunriseHero";
+import HeroBanner from "@/components/hero/HeroBanner";
 import Intro from "@/components/sections/Intro";
 
 // Below-fold sections: split into separate lazy chunks so their JS is not
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <SunriseHero />
+      <HeroBanner />
       <Intro />
       <Pillars />
       <Impact />
