@@ -71,22 +71,22 @@ function FadeUp({
 const principles = [
   {
     title: "Community-Led",
-    body: "Every programme begins with listening. We follow the direction of the communities we serve, not the other way around.",
+    body: "Community-led and locally driven interventions.",
     icon: "🤝",
   },
   {
     title: "Evidence-Based",
-    body: "Our interventions are grounded in local data, participatory research, and rigorous monitoring and evaluation.",
+    body: "Evidence-based and data-informed programming.",
     icon: "📊",
   },
   {
-    title: "Lasting Systems",
-    body: "We build structures, skills, and institutions that endure long after our direct support ends.",
+    title: "Strategic Partnerships",
+    body: "Strategic partnerships with government, academia, and development partners.",
     icon: "🏗️",
   },
   {
-    title: "Radical Transparency",
-    body: "We are accountable to our donors, partners, and — above all — to the communities we work alongside.",
+    title: "Capacity Strengthening",
+    body: "Capacity strengthening and knowledge translation.",
     icon: "🔍",
   },
 ];
@@ -232,29 +232,11 @@ export default function AboutContent() {
             <div className="space-y-6">
               <FadeUp delay={0.1}>
                 <p className="font-sans text-navy/75 text-base leading-relaxed">
-                  HoCAID was founded in {copy.org.established} with a conviction that communities
-                  already hold the answers to their own challenges — they simply need the right
-                  resources, networks, and belief to act. We were established not to impose
-                  solutions but to stand alongside people and amplify what they are already
-                  building.
-                </p>
-              </FadeUp>
-
-              <FadeUp delay={0.15}>
-                <p className="font-sans text-navy/75 text-base leading-relaxed">
-                  From the outset, we built our six-pillar framework around the interconnected
-                  realities of life in underserved communities. Food insecurity cannot be solved
-                  without addressing health. Climate resilience is inseparable from livelihood.
-                  Education and economic empowerment feed each other. Our integrated approach
-                  reflects that truth.
-                </p>
-              </FadeUp>
-
-              <FadeUp delay={0.2}>
-                <p className="font-sans text-navy/75 text-base leading-relaxed">
-                  Today HoCAID is growing — in reach, in partnerships, and in ambition. But our
-                  model has not changed: show up, listen deeply, co-design, build, and leave
-                  behind something stronger than we found.
+                  At HOCAID, we are committed to creating measurable and lasting impact by
+                  strengthening systems, empowering communities, and promoting inclusive,
+                  sustainable development. Our work is guided by evidence, driven by innovation,
+                  and rooted in the belief that communities should lead the transformation of
+                  their own futures.
                 </p>
               </FadeUp>
             </div>
@@ -296,6 +278,11 @@ export default function AboutContent() {
             >
               Our Guiding Principles
             </h2>
+            <p className="font-sans text-navy/65 text-base leading-relaxed text-center max-w-3xl mx-auto -mt-10 mb-12">
+              HOCAID adopts an integrated and people-centered approach to development by combining
+              innovation, community participation, and evidence-driven strategies to deliver
+              sustainable impact.
+            </p>
           </FadeUp>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

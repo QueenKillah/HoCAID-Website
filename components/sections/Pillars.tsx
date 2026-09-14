@@ -7,8 +7,8 @@ import {
   Wheat,
   CloudSun,
   Cpu,
-  Scale,
   Users,
+  BookOpen,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { pillars } from "@/lib/pillars";
@@ -18,8 +18,8 @@ const iconMap: Record<string, LucideIcon> = {
   Wheat,
   CloudSun,
   Cpu,
-  Scale,
   Users,
+  BookOpen,
 };
 
 // Static maps keep Tailwind JIT from purging these classes

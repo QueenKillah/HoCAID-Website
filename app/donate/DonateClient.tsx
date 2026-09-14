@@ -343,6 +343,11 @@ export default function DonateClient() {
             </div>
           </div>
 
+          <p className="font-sans text-navy/55 text-xs leading-relaxed mb-5">
+            Every donation supports HOCAID&apos;s work strengthening health systems, food security,
+            education, and climate resilience in underserved communities.
+          </p>
+
           {/* Submit */}
           <button
             type="submit"

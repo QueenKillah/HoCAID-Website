@@ -6,8 +6,8 @@ import {
   Wheat,
   CloudSun,
   Cpu,
-  Scale,
   Users,
+  BookOpen,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { pillars } from "@/lib/pillars";
@@ -18,8 +18,8 @@ const iconMap: Record<string, LucideIcon> = {
   Wheat,
   CloudSun,
   Cpu,
-  Scale,
   Users,
+  BookOpen,
 };
 
 // ── Static Tailwind class maps (prevents JIT purging) ──────────────────────────
@@ -81,7 +81,7 @@ const programmeDetails: Record<
       "Village savings and loan associations (VSLAs) and livelihood diversification schemes",
     ],
   },
-  3: {
+  6: {
     paragraphs: [
       "Climate change is the defining health challenge of our era. Rising temperatures shift the geography of disease, disrupt food and water systems, and force communities to leave behind the lands and livelihoods that have sustained them for generations. HoCAID works at the intersection of environment and human health — treating climate action as fundamentally a matter of community wellbeing, not just ecological concern.",
       "Our environmental health programmes address the direct pathways between ecosystem change and community health: water quality degradation, indoor and outdoor air pollution, the geographic expansion of vector-borne diseases, and the compounding health consequences of climate-driven displacement. We do not treat the natural environment as separate from the communities living within it.",
@@ -95,7 +95,7 @@ const programmeDetails: Record<
       "Climate-health policy advocacy at national and sub-regional levels",
     ],
   },
-  4: {
+  3: {
     paragraphs: [
       "Data is only powerful when it reaches the people who can act on it. HoCAID deploys digital tools that put decision-making intelligence at every level of the system — from the community health worker recording a case on a mobile phone to the programme officer analysing trends across an entire district. Our goal is not technology for its own sake, but technology that makes better outcomes possible.",
       "We are deliberate about artificial intelligence. AI is not a solution we impose — it is a tool we apply carefully, with attention to algorithmic bias, data sovereignty, and the readiness of the systems and people who will act on its outputs. Our AI work focuses on practical, high-stakes applications: disease surveillance, programme outcome prediction, resource allocation, and evaluation.",
@@ -111,19 +111,13 @@ const programmeDetails: Record<
   },
   5: {
     paragraphs: [
-      "Good governance is not an abstraction — it is the difference between a health system that responds to its people and one that serves only those with power and access. HoCAID works to strengthen accountability mechanisms, improve transparency in public institutions, and create the conditions in which communities can participate meaningfully in the decisions that shape their lives.",
-      "Policy reform requires evidence, advocacy, and sustained relationships. We generate and translate rigorous research into actionable policy briefs, convene stakeholders across government, civil society, and the private sector, and build the coalitions through which communities can hold their leaders accountable to the commitments they have made.",
-      "Innovative financing is essential to close the resource gaps that constrain health and development progress. We advocate for increased domestic resource mobilisation, support the design of community health financing schemes and social protection systems, and facilitate public-private partnerships that align incentives with long-term impact.",
+      "We expand access to quality education, strengthen learning systems, and equip children, young people, and communities with the knowledge and skills they need to thrive.",
     ],
     activities: [
-      "Social accountability monitoring, community scorecards, and citizen feedback platforms",
-      "Policy research, evidence synthesis, and advocacy brief development",
-      "Civic education and participatory governance capacity building",
-      "Health financing advocacy and social health insurance scheme technical support",
-      "Civil society strengthening for policy engagement, coalition building, and legislative advocacy",
+      "We expand access to quality education, strengthen learning systems, and equip children, young people, and communities with the knowledge and skills they need to thrive.",
     ],
   },
-  6: {
+  4: {
     paragraphs: [
       "No programme succeeds without community ownership — and community ownership cannot be manufactured; it must be earned through genuine listening, co-design, and respect for the knowledge, values, and priorities of the people we work with. HoCAID's approach to community engagement begins with curiosity, not answers.",
       "Social and behaviour change communication (SBC) is a discipline grounded in empathy. Before designing any message or intervention, we conduct thorough formative research — focus group discussions, in-depth interviews, and ethnographic observation — to understand the beliefs, social norms, trusted messengers, and communication channels of each specific community.",

@@ -6,7 +6,7 @@ export const copy = {
     campaign: "One Initiative. Six Pillars. Infinite Impact.",
   },
   mission:
-    "Horizon Community Initiative for Aid and Development (HoCAID) strengthens health systems, drives food security, champions climate resilience, and empowers communities to build lasting, self-determined futures.",
+    "To develop and deliver practical solutions to global health, social, economic, and environmental challenges.",
   vision:
     "A world where every community has the knowledge, resources, and agency to thrive.",
   org: {

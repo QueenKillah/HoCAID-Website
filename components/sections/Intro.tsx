@@ -27,11 +27,10 @@ export default function Intro() {
           </h2>
 
           <p className="font-sans text-navy/65 text-lg leading-relaxed max-w-2xl mx-auto">
-            Founded in {copy.org.established}, HoCAID is a grassroots-led organisation working at the
-            intersection of health, climate, and community development across Africa. We stand
-            alongside communities — not above them — to build systems, skills, and structures
-            that endure long after our programmes end. Every initiative we run is shaped by the
-            people it serves.
+            HoCAID is a Nigerian nonprofit advancing health, sustainable development, and social
+            equity through innovative, evidence-based, and locally led interventions across health,
+            agriculture, education, climate resilience, governance, digital innovation, and economic
+            empowerment.
           </p>
         </motion.div>
       </div>
