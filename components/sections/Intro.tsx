@@ -16,10 +16,10 @@ export default function Intro() {
         </h2>
 
         <p className="font-sans text-navy/65 text-lg leading-relaxed max-w-2xl mx-auto">
-          Established in {copy.org.established}, HoCAID is a Nigerian organisation building its
-          programme portfolio at the intersection of health, climate, and community development.
-          Our approach centres on listening, collaboration, and systems designed for lasting local
-          ownership.
+          Established in {copy.org.established}, HoCAID is a Nigerian nonprofit advancing health,
+          sustainable development, and social equity through innovative, evidence-based, and locally
+          led interventions across health, agriculture, education, climate resilience, governance,
+          digital innovation, and economic empowerment.
         </p>
       </div>
     </section>

@@ -59,8 +59,11 @@ export default function DonateClient() {
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl border border-navy/10 p-6 sm:p-10 shadow-sm">
           <h2 className="font-display font-bold text-navy text-2xl mb-3">Choose your contribution</h2>
-          <p className="font-sans text-navy/65 text-sm leading-relaxed mb-7">
+          <p className="font-sans text-navy/65 text-sm leading-relaxed mb-3">
             Choose an amount to give through Paystack. HoCAID&apos;s programme priorities are described on our Programmes page; contact us with any donation questions before giving.
+          </p>
+          <p className="font-sans text-navy/50 text-xs leading-relaxed mb-7 italic">
+            Every donation supports HOCAID&apos;s work strengthening health systems, food security, education, and climate resilience in underserved communities.
           </p>
           <form onSubmit={donate} className="space-y-6" noValidate>
             <fieldset>

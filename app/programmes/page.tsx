@@ -46,8 +46,9 @@ export default function ProgrammesPage() {
           <div className="border-l-4 border-sunrise bg-navy/5 px-5 py-4">
             <h2 className="font-sans font-semibold text-navy text-sm mb-1">Our approach</h2>
             <p className="font-sans text-navy/70 text-sm leading-relaxed">
-              We are building our programme portfolio through community-centred learning,
-              responsible collaboration, and evidence-informed planning.
+              HOCAID adopts an integrated and people-centered approach to development by combining
+              innovation, community participation, and evidence-driven strategies to deliver
+              sustainable impact.
             </p>
           </div>
         </div>

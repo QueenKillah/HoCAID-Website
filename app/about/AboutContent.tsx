@@ -71,23 +71,23 @@ function FadeUp({
 const principles = [
   {
     title: "Community-Led",
-    body: "Every programme begins with listening. We follow the direction of the communities we serve, not the other way around.",
+    body: "We design and deliver community-led and locally driven interventions, ensuring communities shape the direction of their own development.",
     icon: "🤝",
   },
   {
     title: "Evidence-Based",
-    body: "Our interventions are grounded in local data, participatory research, and rigorous monitoring and evaluation.",
+    body: "Our programming is evidence-based and data-informed, grounded in research, monitoring, and evaluation to ensure effectiveness.",
     icon: "📊",
   },
   {
-    title: "Lasting Systems",
-    body: "We build structures, skills, and institutions that endure long after our direct support ends.",
-    icon: "🏗️",
+    title: "Strategic Partnerships",
+    body: "We build strategic partnerships with government, academia, and development partners to amplify impact and sustain progress.",
+    icon: "🏛️",
   },
   {
-    title: "Radical Transparency",
-    body: "We are accountable to our donors, partners, and — above all — to the communities we work alongside.",
-    icon: "🔍",
+    title: "Capacity Strengthening",
+    body: "We invest in capacity strengthening and knowledge translation, building local skills, systems, and institutions for lasting change.",
+    icon: "🌱",
   },
 ];
 
@@ -160,10 +160,9 @@ export default function AboutContent() {
               </p>
               <p className="font-sans text-white/65 text-base leading-relaxed">
                 We pursue this mission through six integrated pillars — Health Systems Strengthening,
-                Food Security, Agriculture &amp; Sustainable Livelihoods, Climate Change &amp;
-                Environmental Health, Digital Innovation, AI &amp; Data Intelligence,
-                Governance &amp; Policy Innovation, and Community Engagement, SBC &amp; Risk
-                Communication — each reinforcing the others to create lasting, systemic change.
+                Food Security, Agriculture &amp; Sustainable Livelihoods (FASL), Digital Innovations
+                &amp; AI, Community Engagement, Education, and Climate Change — each reinforcing the
+                others to create lasting, systemic change.
               </p>
             </FadeUp>
 
@@ -239,11 +238,11 @@ export default function AboutContent() {
             <div className="space-y-6">
               <FadeUp delay={0.1}>
                 <p className="font-sans text-navy/75 text-base leading-relaxed">
-                  HoCAID was founded in {copy.org.established} with a conviction that communities
-                  already hold the answers to their own challenges — they simply need the right
-                  resources, networks, and belief to act. We were established not to impose
-                  solutions but to stand alongside people and amplify what they are already
-                  building.
+                  At HoCAID, we are committed to creating measurable and lasting impact by
+                  strengthening systems, empowering communities, and promoting inclusive,
+                  sustainable development. Our work is guided by evidence, driven by innovation,
+                  and rooted in the belief that communities should lead the transformation of
+                  their own futures.
                 </p>
               </FadeUp>
 

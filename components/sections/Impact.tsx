@@ -55,8 +55,7 @@ export default function Impact() {
             Established in April 2026
           </h2>
           <p className="font-sans text-white/75 text-lg leading-relaxed max-w-2xl mx-auto">
-            HoCAID is in its foundational stage, building a programme portfolio across six strategic
-            priorities. The activities below represent our documented work since registration.
+            The activities below represent our documented work since registration.
           </p>
         </div>
       </section>

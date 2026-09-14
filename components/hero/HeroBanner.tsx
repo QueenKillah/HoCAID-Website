@@ -9,7 +9,7 @@ export default function HeroBanner() {
 
   return (
     <section
-      className="relative w-full overflow-hidden h-screen [height:100svh]"
+      className="relative w-full overflow-hidden h-dvh sm:h-screen"
       aria-label="Hero — Rising Together Towards a Better Tomorrow"
     >
       {/* Background: video for motion, still image for prefers-reduced-motion */}
