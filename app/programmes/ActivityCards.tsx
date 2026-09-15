@@ -71,9 +71,6 @@ export default function ActivityCards() {
           <h2 className="font-display font-bold text-navy text-3xl sm:text-4xl mb-4">
             Our Activities
           </h2>
-          <p className="font-sans text-navy/60 text-base max-w-xl leading-relaxed">
-            Documented community engagements from HOCAID&apos;s first year of operation — sourced from approved field reports.
-          </p>
         </div>
 
         {/* 2-column grid */}
