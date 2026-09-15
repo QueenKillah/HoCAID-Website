@@ -70,9 +70,6 @@ export default function Impact() {
             <h2 className="font-display font-bold text-navy text-3xl sm:text-4xl">
               Recent Activities
             </h2>
-            <p className="font-sans text-navy/60 text-base mt-4 max-w-xl mx-auto">
-              Real activities, real communities — documented and sourced.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
