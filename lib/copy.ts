@@ -6,7 +6,7 @@ export const copy = {
     campaign: "One Initiative. Six Pillars. Infinite Impact.",
   },
   mission:
-    "To develop and deliver practical solutions to global health, social, economic, and environmental challenges.",
+    "HOCAID is a Nigerian nonprofit committed to developing and delivering practical solutions to health, social, economic, and environmental challenges facing communities across Nigeria and beyond.",
   vision:
     "A world where every community has the knowledge, resources, and agency to thrive.",
   org: {

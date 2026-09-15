@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Phone, ShieldCheck } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -14,44 +14,9 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.63 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.88-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
-
-function MapPinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function IdCardIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-      <rect x="2" y="5" width="20" height="14" rx="2" />
-      <path d="M16 10h2M16 14h2M7 10a2 2 0 1 0 4 0 2 2 0 0 0-4 0M7 14s.5-1 2-1 2 1 2 1" />
-    </svg>
-  );
-}
-
 function InstagramIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -61,7 +26,7 @@ function InstagramIcon() {
 
 function LinkedinIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect x="2" y="9" width="4" height="12" />
       <circle cx="4" cy="4" r="2" />
@@ -95,31 +60,64 @@ export default function ContactPage() {
       </header>
 
       {/* ── Two-column section ── */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* ── Left (60%) — Form ── */}
           <div className="lg:col-span-3">
-            <h2 className="font-display font-bold text-navy text-2xl mb-8">
-              Contact HoCAID directly
-            </h2>
             <ContactForm />
           </div>
 
-          {/* ── Right (40%) — Contact info card ── */}
-          <div className="lg:col-span-2">
-            <div className="bg-cream rounded-2xl p-8 space-y-6 lg:sticky lg:top-8">
-              <h2 className="font-display font-bold text-navy text-xl">
-                Our details
-              </h2>
+          {/* ── Right (40%) — Info cards ── */}
+          <div className="lg:col-span-2 space-y-4 lg:sticky lg:top-24 lg:self-start">
 
-              {/* Email */}
+            {/* Registered office */}
+            <div className="rounded-xl border border-navy/10 p-5">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
-                  <MailIcon />
+                <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-5 h-5 text-sunrise" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-sans font-semibold text-navy text-sm mb-0.5">
+                  <p className="font-sans font-bold text-navy text-sm mb-1">
+                    Registered Office
+                  </p>
+                  <p className="font-sans text-navy/60 text-sm leading-relaxed">
+                    No. 21, Henry Umahi Street,<br />
+                    Trademore Estate, Lugbe,<br />
+                    FCT, Nigeria
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="rounded-xl border border-navy/10 p-5">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-sunrise" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-sans font-bold text-navy text-sm mb-1">
+                    Phone Number
+                  </p>
+                  <a
+                    href="tel:+2348064749454"
+                    className="font-sans text-sunrise text-sm hover:underline focus-visible:outline-none focus-visible:underline"
+                  >
+                    +234 806 474 9454
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="rounded-xl border border-navy/10 p-5">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-sunrise" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-sans font-bold text-navy text-sm mb-1">
                     Email
                   </p>
                   <a
@@ -130,112 +128,55 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
 
-              {/* Phone */}
+            {/* Registration */}
+            <div className="rounded-xl border border-navy/10 p-5">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
-                  <PhoneIcon />
+                <div className="w-10 h-10 rounded-lg bg-cream flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-sunrise" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-sans font-semibold text-navy text-sm mb-0.5">
-                    Phone
-                  </p>
-                  <a
-                    href="tel:+2348064749454"
-                    className="font-sans text-navy/60 text-sm hover:text-sunrise transition-colors focus-visible:outline-none focus-visible:underline"
-                  >
-                    +234 806 474 9454
-                  </a>
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
-                  <MapPinIcon />
-                </div>
-                <div>
-                  <p className="font-sans font-semibold text-navy text-sm mb-0.5">
-                    Office
-                  </p>
-                  <p className="font-sans text-navy/60 text-sm leading-relaxed">
-                    No. 21, Henry Umahi Street,<br />
-                    Trademore Estate, Lugbe,<br />
-                    FCT, Nigeria
-                  </p>
-                </div>
-              </div>
-
-              {/* Website */}
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-sans font-semibold text-navy text-sm mb-0.5">
-                    Website
-                  </p>
-                  <a
-                    href="https://hocaid.org"
-                    className="font-sans text-sunrise text-sm hover:underline focus-visible:outline-none focus-visible:underline"
-                  >
-                    hocaid.org
-                  </a>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-navy/10" />
-
-              {/* Registration info */}
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center flex-shrink-0 text-white mt-0.5">
-                  <IdCardIcon />
-                </div>
-                <div>
-                  <p className="font-sans font-semibold text-navy text-sm mb-1">
+                  <p className="font-sans font-bold text-navy text-sm mb-1">
                     Registration
                   </p>
                   <p className="font-sans text-navy/60 text-xs leading-relaxed">
-                    CAC Reg. No.: RC 9492937<br />
+                    CAC Reg. No.: RC&nbsp;9492937<br />
                     Tax ID: 2623728389617
                   </p>
                 </div>
               </div>
+            </div>
 
-              {/* Divider */}
-              <div className="h-px bg-navy/10" />
-
-              {/* Follow us */}
-              <div>
-                <p className="font-sans font-semibold text-navy text-sm mb-3">
-                  Follow us
-                </p>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://www.instagram.com/hocaidng"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="HoCAID on Instagram"
-                    className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
-                  >
-                    <InstagramIcon />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/116017593/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="HoCAID on LinkedIn"
-                    className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
-                  >
-                    <LinkedinIcon />
-                  </a>
-                </div>
+            {/* Follow HoCAID — pill-button social links */}
+            <div className="rounded-xl border border-navy/10 bg-cream p-5">
+              <p className="font-sans font-bold text-navy text-sm mb-3">
+                Follow HoCAID
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href="https://www.instagram.com/hocaidng"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="HoCAID on Instagram"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-navy/15 bg-white font-sans text-navy text-xs font-semibold hover:border-sunrise/50 hover:text-sunrise transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+                >
+                  <InstagramIcon />
+                  Instagram
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/116017593/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="HoCAID on LinkedIn"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-navy/15 bg-white font-sans text-navy text-xs font-semibold hover:border-sunrise/50 hover:text-sunrise transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sunrise"
+                >
+                  <LinkedinIcon />
+                  LinkedIn
+                </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>
