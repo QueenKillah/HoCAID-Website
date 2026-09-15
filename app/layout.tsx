@@ -121,7 +121,7 @@ export default function RootLayout({
         )}
         <NavigationProgress />
         <Header />
-        <main>{children}</main>
+        <main className="pt-[67px]">{children}</main>
         <Footer />
         <WhatsAppButton />
         <CookieBanner />

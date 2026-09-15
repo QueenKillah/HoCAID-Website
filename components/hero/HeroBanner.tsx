@@ -9,7 +9,7 @@ export default function HeroBanner() {
 
   return (
     <section
-      className="relative w-full overflow-hidden h-dvh sm:h-screen"
+      className="relative w-full overflow-hidden h-dvh sm:h-screen -mt-[67px]"
       aria-label="Hero — Rising Together Towards a Better Tomorrow"
     >
       {/* Background: video for motion, still image for prefers-reduced-motion */}
@@ -36,8 +36,9 @@ export default function HeroBanner() {
         </video>
       )}
 
-      {/* Gradient overlay — bottom dark band keeps white text legible */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      {/* Gradient overlay — full-frame base tint + heavy bottom band keep white text legible */}
+      <div className="absolute inset-0 pointer-events-none bg-black/20" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/75 via-black/35 to-transparent" />
 
       {/* Sun glow pulse — anchored to the sun's position in the frame */}
       {!rm && (
@@ -75,7 +76,10 @@ export default function HeroBanner() {
           >
             Rising Together Towards a Better Tomorrow
           </h1>
-          <p className="font-sans font-bold mt-4 text-base sm:text-lg md:text-xl text-white/90">
+          <p
+            className="font-sans font-bold mt-4 text-base sm:text-lg md:text-xl text-white/90"
+            style={{ textShadow: "0 1px 12px rgba(0,0,0,0.6)" }}
+          >
             Aid. Develop. Transform.
           </p>
         </motion.div>

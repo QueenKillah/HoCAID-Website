@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -14,27 +15,45 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Transparent only on the homepage hero — goes solid on all inner pages and once scrolled
+  const isTransparent = pathname === "/" && !scrolled;
 
   return (
-    <header className="bg-navy">
-      {/* 3px sunrise→gold accent strip */}
-      <div className="h-[3px] bg-gradient-to-r from-sunrise to-gold" />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 ${
+        isTransparent ? "bg-transparent" : "bg-navy shadow-md"
+      }`}
+    >
+      {/* 3px sunrise→gold accent strip — hidden while transparent to avoid floating stripe */}
+      <div
+        className={`h-[3px] bg-gradient-to-r from-sunrise to-gold transition-opacity duration-300 ${
+          isTransparent ? "opacity-0" : "opacity-100"
+        }`}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="h-10 md:h-12 overflow-hidden flex items-center">
-              <Image
-                src="/images/Logo_image_without_bg.png"
-                alt="HoCAID — Horizon Community Initiative for Aid and Development"
-                width={160}
-                height={48}
-                className="h-10 md:h-12 w-auto"
-                sizes="(max-width: 768px) 133px, 160px"
-                priority
-              />
-            </div>
+          {/* Logo — transparent background, no wrapper box */}
+          <Link href="/" className="flex items-center flex-shrink-0">
+            <Image
+              src="/images/Logo_image_without_bg.png"
+              alt="HoCAID — Horizon Community Initiative for Aid and Development"
+              width={160}
+              height={48}
+              className="h-10 md:h-12 w-auto"
+              sizes="(max-width: 768px) 133px, 160px"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -68,10 +87,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav — always opaque so menu items stay legible */}
       {mobileOpen && (
         <nav
-          className="md:hidden bg-navy border-t border-white/10 px-4 pb-4"
+          className={`md:hidden border-t border-white/10 px-4 pb-4 ${
+            isTransparent ? "bg-navy/95 backdrop-blur-sm" : "bg-navy"
+          }`}
           aria-label="Mobile navigation"
         >
           {navLinks.map((link) => (
