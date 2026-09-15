@@ -76,9 +76,16 @@ export default function ContactForm() {
           Message received!
         </h3>
         <p className="font-sans text-navy/65 text-sm leading-relaxed">
-          Thank you for reaching out. We&apos;ll get back to you at{" "}
-          <strong className="font-semibold text-navy">{fields.email}</strong> as
-          soon as possible.
+          Thank you for contacting us. You can also reach us directly through{" "}
+          <a
+            href="https://wa.me/2348064749454"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-navy hover:underline focus-visible:outline-none focus-visible:underline"
+          >
+            WhatsApp
+          </a>
+          .
         </p>
       </div>
     );
