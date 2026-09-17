@@ -158,12 +158,6 @@ export default function AboutContent() {
               <p className="font-display font-bold text-white leading-snug text-2xl sm:text-3xl mb-6">
                 {copy.mission}
               </p>
-              <p className="font-sans text-white/65 text-base leading-relaxed">
-                We pursue this mission through six integrated pillars — Health Systems Strengthening,
-                Food Security, Agriculture &amp; Sustainable Livelihoods (FASL), Digital Innovations
-                &amp; AI, Community Engagement, Education, and Climate Change — each reinforcing the
-                others to create lasting, systemic change.
-              </p>
             </FadeUp>
 
             <FadeUp delay={0.2}>
