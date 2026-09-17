@@ -8,20 +8,13 @@ export default function Intro() {
           About HoCAID
         </p>
 
-        <h2
-          className="font-display font-bold text-navy leading-tight mb-7
-                     text-3xl sm:text-4xl md:text-5xl"
-        >
-          {copy.mission}
-        </h2>
-
         <p className="font-sans text-navy/65 text-lg leading-relaxed max-w-2xl mx-auto">
-          HoCAID is a nonprofit organization working toward a world where every community has the
-          knowledge, resources, and agency to thrive. Established in {copy.org.established}, we
-          develop and deliver practical, evidence-based solutions to the health, social, economic,
-          and environmental challenges facing communities across Nigeria and beyond, through locally
-          led interventions in health, agriculture, education, climate resilience, governance,
-          digital innovation, and economic empowerment.
+          HoCAID is a nonprofit organization working to create a world where every community has
+          the knowledge, resources, and agency to thrive. Established in {copy.org.established},
+          we develop and deliver practical, evidence-based solutions to the health, social,
+          economic, and environmental challenges facing communities across Nigeria and beyond,
+          through locally led interventions in health, agriculture, education, climate resilience,
+          governance, digital innovation, and economic empowerment.
         </p>
       </div>
     </section>
