@@ -8,7 +8,7 @@ export default function Intro() {
           About HoCAID
         </p>
 
-        <p className="font-sans text-navy/65 text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="font-sans text-navy text-lg leading-relaxed max-w-2xl mx-auto">
           HoCAID is a nonprofit organization working to create a world where every community has
           the knowledge, resources, and agency to thrive. Established in {copy.org.established},
           we develop and deliver practical, evidence-based solutions to the health, social,
